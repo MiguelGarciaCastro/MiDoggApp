@@ -5,9 +5,9 @@
 ## Description
 Sometimes, it's hard to figure out where you should take your dog for an outing. Which places are dog-friendly? What do other dog handlers have to say about these dog friendly places near you?
 
-My Dog's App is here to help! 
+MiDoggApp is here to help! 
 
-With My Dog's App, you can login and share your experiences or explore other dog-friendly adventures on our community blog so you’re always connected with other dogs and their humans.
+With MiDoggApp, you can login and share your experiences or explore other dog-friendly adventures on our community blog so you’re always connected with other dogs and their humans.
 
 ## Technologies Used
 * React front-end
@@ -23,3 +23,6 @@ With My Dog's App, you can login and share your experiences or explore other dog
 
 ## Contributors
 [Max Parks](https://github.com/maxaeon)
+[Jason]
+[Miguel]
+[Travis]
