@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const techSchema = new Schema({
+const placesSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -8,6 +8,6 @@ const techSchema = new Schema({
   },
 });
 
-const Tech = model('Tech', techSchema);
+const Places = model('Places', techSchema);
 
-module.exports = Tech;
+module.exports = Places;
