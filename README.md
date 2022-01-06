@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/87254760/148318225-4ff526fb-677d-4495-83fe-ec550e0b1da0.png)
 
-## Decription
+## Description
 Sometimes, it's hard to figure out where you should take your dog for an outing. Which places are dog-friendly? What do other dog handlers have to say about these dog friendly places near you?
 
 My Dog's App is here to help! 
