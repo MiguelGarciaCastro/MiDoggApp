@@ -3,7 +3,7 @@
 ![image](https://user-images.githubusercontent.com/87254760/148318225-4ff526fb-677d-4495-83fe-ec550e0b1da0.png)
 
 ## Description
-Sometimes, it's hard to figure out where you should take your dog for an outing. Which places are dog-friendly? What do other dog handlers have to say about these dog friendly places near you?
+Sometimes, it's hard to figure out where you should take your dog for an outing. Which places and activities are dog-friendly? What do other dog handlers have to say about these dog-friendly places and activities near you?
 
 MiDoggApp is here to help! 
 
@@ -22,7 +22,7 @@ With MiDoggApp, you can login and share your experiences or explore other dog-fr
 
 
 ## Contributors
+[Jason Ganiatsas](https://github.com/derotto54)
 [Max Parks](https://github.com/maxaeon)
-[Jason]
-[Miguel]
-[Travis]
+[Miguel Garcia Castro](https://github.com/MiguelGarciaCastro)
+[Travis Schram](https://github.com/tschram93)
