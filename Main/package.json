@@ -1,18 +1,28 @@
 {
-  "name": "tech-matchup-app",
+  "name": "midogapp",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "index.js",
+  "dependencies": {
+    "@apollo/client": "^3.3.20",
+    "apollo-server-express": "^2.25.2",
+    "axios": "^0.21.1",
+    "bingmaps-react": "^1.1.0",
+    "graphql": "^15.5.1",
+    "jwt-decode": "^3.1.2",
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build"
+    "seed": "cd server && npm run seed"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^5.3.0"
-  }
+  "license": "ISC"
 }
