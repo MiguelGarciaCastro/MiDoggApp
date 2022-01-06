@@ -1,6 +1,6 @@
 # MiDogApp
 
-![image](https://user-images.githubusercontent.com/87254760/148318225-4ff526fb-677d-4495-83fe-ec550e0b1da0.png)
+![image](https://user-images.githubusercontent.com/87254760/148344022-987edefa-1750-4aa6-a6eb-a959081de744.png)
 
 ## Description
 Sometimes, it's hard to figure out where you should take your dog for an outing. Which places and activities are dog-friendly? What do other dog handlers have to say about these dog-friendly places and activities near you?
