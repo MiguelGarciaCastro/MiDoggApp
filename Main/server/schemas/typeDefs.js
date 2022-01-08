@@ -1,27 +1,77 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-  type Tech {
-    _id: ID!
-    name: String!
+  type User {
+    _id: ID
+    username: String
+    friendCount: Int
+    posts: [Post]
+    favorites: [Brewery]
   }
 
-  type Matchup {
-    _id: ID!
-    tech1: String!
-    tech2: String!
-    tech1_votes: Int
-    tech2_votes: Int
+  type Post {
+    _id: ID
+    body: String
+    createdAt: String
+    username: String
+    commentCount: Int
+    comments: [Comment]
   }
 
+  type Comment {
+    _id: ID
+    commentBody: String
+    username: String
+    createdAt: String
+  }
+
+  type Address {
+    street: String
+    city: String
+    state: String
+    postalCode: String
+    country: String
+  }
+
+  type Location {
+    longitude: String
+    latitude: String
+  }
+
+  type Brewery {
+    id: ID
+  }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+type Apikey {
+  value: String
+}
   type Query {
-    tech: [Tech]
-    matchups(_id: String): [Matchup]
+    me: User
+    users: [User]
+    user(username: String!): User
+    posts(username: String): [Post]
+    post(_id: ID!): Post
+    env: Apikey
   }
 
   type Mutation {
-    createMatchup(tech1: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
+    login(username: String!, password: String!): Auth
+
+    addUser(username: String!, password: String!): Auth
+
+    addPost(body: String!): Post
+
+    addComment(postId: ID!, commentBody: String!): Post
+
+    addBrewery(id: ID!): Brewery
+
+    removeBrewery(id: ID!): Brewery
+
+    addFriend(friendId: ID!): User
   }
 `;
 
