@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer className="footerBottom">
             <div>
-                <a href="https://github.com/rbsantos-code/BrewMaps-3">BrewMaps Repo</a>
+                <a href="https://github.com/maxaeon/midogapp">MiDogApp Repo</a>
             </div>
         </footer>
     )
