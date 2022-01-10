@@ -5,7 +5,7 @@ import { QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
 import logo from '../../public/images/logo.png';
 import PostList from '../PostList';
 import PostForm from '../PostForm';
-import beagle from '../../public/images/beagle.png';
+import group from '../../public/images/group.png';
 import Auth from '../../utils/auth';
 
 export default function Social() {
@@ -49,7 +49,7 @@ export default function Social() {
                 )}
             </article>
             <hr />
-            <img src={beagle}></img>
+            <img src={group}></img>
             <hr />
             <div>
                 {loggedIn && (
