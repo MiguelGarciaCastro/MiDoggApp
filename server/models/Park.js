@@ -7,18 +7,11 @@ const ParkSchema = new Schema(
       type: String,
       required: true
     },
-    bigDog: {
-    bool
-    },
-    separateSmallDogArea: {
-    bool
-    },
-    fencedIn: {
-    bool
-    },
-    offLeash: {
-    bool
-    }
+    bigDog: bool,
+    separateSmallDogArea: bool,
+    fencedIn: bool,
+    offLeash: bool,
+    address: [Address]
   },
   {
     toJSON: {
