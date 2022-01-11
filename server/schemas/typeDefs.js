@@ -4,9 +4,38 @@ const typeDefs = gql`
   type User {
     _id: ID
     username: String
+    city: String
     friendCount: Int
     posts: [Post]
     favorites: [Brewery]
+  }
+
+  type Doggo {
+    _id: ID
+    careTaker: [User]
+    bread: String
+    age: String
+    socialLevel: String
+    needs: String
+    isBig: Boolean
+  }
+
+  type Location {
+    type: String
+    name: String
+    region: String
+    address: String
+    city: String
+    zip: String
+    mileMarker: String
+    website: String
+    phone: String
+    bigDogAllowed: Boolean
+    dogCount: Int
+    dogFee: Int
+    offLeash: Boolean
+    longitude: String
+    latitude: String
   }
 
   type Post {
@@ -33,10 +62,7 @@ const typeDefs = gql`
     country: String
   }
 
-  type Location {
-    longitude: String
-    latitude: String
-  }
+  
 
   type Brewery {
     id: ID

@@ -1,19 +1,79 @@
 import React, { useState, useEffect } from "react";
-//import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { Link } from 'react-router-dom';
 import group from "../../public/images/group.png";
 import logo from "../../public/images/logo.png";
-//import { ADD_BREWERY, REMOVE_BREWERY } from "../../utils/mutations";
+import { ADD_BREWERY, REMOVE_BREWERY } from "../../utils/mutations";
 import StarButton from "../StarButton";
 import Cart from "../Cart";
 import Auth from '../../utils/auth';
 
-//export default function Home() {
+export default function Home() {
+  const [activeModal, SetActiveModal] = useState(false);
 
+  const [brewery, setBrewery] = useState([]);
 
-//  const refreshPage = () => {
-//    window.location.reload();
-//  };
+  const [pins, setPins] = useState([]);
+
+  const [city, setCity] = useState("");
+
+  const [longitude, setlongitude] = useState(0);
+
+  const [latitude, setlatitude] = useState(0);
+
+  const [addBrewery] = useMutation(ADD_BREWERY);
+  const [removeBrewery] = useMutation(REMOVE_BREWERY);
+
+  const toggleActive = () => {
+    SetActiveModal(!activeModal);
+  };
+
+  const clickHandler = (event) => {
+    const mapData = event.target.getAttribute("data");
+    console.log(JSON.parse(mapData));
+    setPins([...pins, JSON.parse(mapData)]);
+  };
+
+  console.log("pins", pins);
+
+  const submitHandler = () => {
+    fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setBrewery(data);
+        console.log(data);
+        setlongitude(data[0].longitude);
+        setlatitude(data[0].latitude);
+      })
+      .then(() => toggleActive())
+      .catch((error) => {
+        console.log(error);
+        window.location.reload();
+        alert('Brewery info not available, try another search!');
+    })
+  };
+
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
+  const saveHandler = async (e) => {
+    console.log(e.target);
+    const id = e.target.value;
+    console.log(id);
+    const { data } = await addBrewery({variables: { id: id }});
+    console.log(data);
+    console.log(id);
+  };
+
+  const removeHandler = async (e) => {
+    console.log(e.target);
+    const id = e.target.value;
+    console.log(id);
+    const { data } = await removeBrewery({variables: { id: id }});
+    console.log(data);
+    console.log(id);
+  };
 
   return (
     <>
@@ -27,7 +87,7 @@ import Auth from '../../utils/auth';
             ></img>
             <h1 className="title text-light">MiDogMap</h1>
             <h2 className="subtitle text-light">
-            Info for your dog! because face it, they are in charge.            
+              Info for your dog! because face it, they are in charge.            
             </h2>
             <div className="box">
               <div className="field is-grouped">
@@ -35,11 +95,14 @@ import Auth from '../../utils/auth';
                   <input
                     className="input is-medium"
                     type="text"
-                    placeholder="Select your city"
-                    //onChange={(e) => setCity(e.target.value)}
+                    placeholder="Select your city">
+                  </input>
+                    {/*onChange={(e) => setCity(e.target.value)}*/}
             <div class="select">
               <select id="dropdown">
-                <option id="selected"><a class="selected">Select a City Near You</a></option> 
+                <option id="selected">
+                  <div className="selected">Select a City Near You</div>
+                </option> 
                 <option>Alpena</option>
                 <option>Ann Arbor</option>
                 <option>Bay City</option>
@@ -52,29 +115,28 @@ import Auth from '../../utils/auth';
                 <option>Kalamazoo</option>
                 <option>Lansing</option>
                 <option>Ludington</option>
-                <option>Mackinac Island<option>
+                <option>Mackinac Island</option>
                 <option>Marquette</option>
                 <option>Midland</option>        
                 <option>Mt. Pleasant</option>
-                <option>Munising</option<
+                <option>Munising</option>
                 <option>Muskegon</option>
-                <option>Port Hurton</option>
+                <option>Port Huron</option>
                 <option>Sault Ste. Marie</option>
                 <option>Saginaw</option>
                 <option>Traverse City</option>
               </select>
             </div>
-                  ></input>
+                 {/*</input>*/}
                 </p>
                 <p className="control">
-                  <a
+                  <div
                     className="button is-warning is-round is-medium"
                     id="searchBtn"
                     onClick={submitHandler}
-                    //key={brewery.id}
                   >
                     Search
-                  </a>
+                  </div>
                 </p>
               </div>
             </div>
@@ -97,10 +159,8 @@ import Auth from '../../utils/auth';
               <div className="columns">
                 <div className="column is-half brew-data">
                   <img src={logo} />
-//
                 </div>
                 <div className="column auto">
-//
                 </div>
               </div>
             </section>
@@ -132,5 +192,5 @@ import Auth from '../../utils/auth';
       <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
       <script src="/javascript/api.js"></script>
     </>
-  );
+  )
 }
