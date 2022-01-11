@@ -1,14 +1,17 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const hikingSchema = new Schema(
+const restAreaSchema = new Schema(
   {
     id: {
       type: String,
       required: true
     },
-    handicap_accessible: bool,
-    difficulty: String,
+    open: bool,
+    dog_run: bool,
+    vending_machines: bool,
+    handicap_spaces: Number,
+    route_direction: String,
     address: [Address]
   },
   {
@@ -18,6 +21,6 @@ const hikingSchema = new Schema(
   }
 );
 
-const Hiking = model('Hiking', hikingSchema);
+const RestArea = model('RestArea', restAreaSchema);
 
-module.exports = Hiking;
+module.exports = RestArea;
