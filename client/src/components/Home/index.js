@@ -16,7 +16,7 @@ import Auth from '../../utils/auth';
 //  };
 
   return (
-    <>
+    // <>
       <div className="hero-body">
         <div className="container has-text-centered">
           <div className="column is-full is-centered">
@@ -35,11 +35,13 @@ import Auth from '../../utils/auth';
                   <input
                     className="input is-medium"
                     type="text"
-                    placeholder="Select your city"
-                    //onChange={(e) => setCity(e.target.value)}
+                    placeholder="Select your city" />
+                    {/* //onChange={(e) => setCity(e.target.value)}  */}
+                    >
+                
             <div className="select">
               <select id="dropdown">
-                <option id="selected"><a class="selected">Select a City Near You</a></option> 
+                <option id="selected"><Link class="selected">Select a City Near You</Link></option> 
                 <option>Alpena</option>
                 <option>Ann Arbor</option>
                 <option>Bay City</option>
@@ -56,7 +58,7 @@ import Auth from '../../utils/auth';
                 <option>Marquette</option>
                 <option>Midland</option>        
                 <option>Mt. Pleasant</option>
-                <option>Munising</option<
+                <option>Munising</option>
                 <option>Muskegon</option>
                 <option>Port Hurton</option>
                 <option>Sault Ste. Marie</option>
@@ -64,16 +66,16 @@ import Auth from '../../utils/auth';
                 <option>Traverse City</option>
               </select>
             </div>
-                  ></input>
+            </input>  
                 </p>
                 <p className="control">
-                  <a
+                  <Link
                     className="button is-warning is-round is-medium"
                     id="searchBtn"
                     onClick={submitHandler}
                   >
                     Search
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -95,10 +97,8 @@ import Auth from '../../utils/auth';
               <div className="columns">
                 <div className="column is-half brew-data">
                   <img src={logo} />
-//
                 </div>
                 <div className="column auto">
-//
                 </div>
               </div>
             </section>
@@ -129,6 +129,6 @@ import Auth from '../../utils/auth';
       ></script>
       <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
       <script src="/javascript/api.js"></script>
-    </>
+    {/* </> */}
   );
 }
