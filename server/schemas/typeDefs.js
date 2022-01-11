@@ -32,7 +32,7 @@ const typeDefs = gql`
   }
 
   type City {
-    id: ID
+    id: String
     hotels: [Hotel]
     parks: [Park]
     groomers: [Groomer]
