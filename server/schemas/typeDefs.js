@@ -55,70 +55,70 @@ const typeDefs = gql`
   }
   
   type: Veterinarian {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
   }
   
   type: Restaurant {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
   }
   
   type: Trail {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
   }
   
   type: Beach {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
   }
   
   type: Campground {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
   }
   
   type: Boarding {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
   }
   
   type: Store {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
   }
   
   type: Groomer {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
   }
   
   type: Park {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
   }
   
   type: Hotel {
-  id: ID
+  _id: ID
   name: String
   address: [Address]
   comments: [Comment]
