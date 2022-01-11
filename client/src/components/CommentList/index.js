@@ -4,7 +4,7 @@ import CommentForm from '../CommentForm';
 import Auth from '../../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_POST } from '../../utils/queries';
-import Beericon from '../../public/images/circleBeericon.png';
+import logo from '../../public/images/logo.png';
 
 
 const CommentList = ({ comments }) => {
@@ -18,7 +18,7 @@ const CommentList = ({ comments }) => {
     const post = data?.post || {};
 
     if (loading) {
-        return <div>Something is brewing!</div>;
+        return <div>Loading...give your dog some attention while you wait!</div>;
     }
     
     return (
@@ -28,7 +28,7 @@ const CommentList = ({ comments }) => {
                     <article className="media" key={comment._id}>
                         <figure className="media-left">
                             <p className="image is-48x48">
-                                <img src={Beericon}></img>
+                                <img src={logo}></img>
                             </p>
                         </figure>
                         <div className="media-content">
