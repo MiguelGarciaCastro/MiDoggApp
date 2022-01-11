@@ -70,7 +70,7 @@ const PostForm = () => {
                         <img src="https://bulma.io/images/placeholders/128x128.png"></img>
                     </p>
                 </figure>
-
+ 
                 <form class="media-content" onSubmit={handleFormSubmit}>
                     <div class="field">
                         <p class="control">

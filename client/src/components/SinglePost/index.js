@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { QUERY_POST } from '../../utils/queries';
-import Bottle from '../../public/images/bottle.png';
+import Group from '../../public/images/group.png';
 
 import CommentList from '../CommentList';
 import CommentForm from '../CommentForm';
@@ -20,7 +20,7 @@ const SinglePost = props => {
     const posts = data?.post || {};
 
     if (loading) {
-        return <div>Something is brewing!</div>;
+        return <div>Loading- give your dog some attention while you wait!</div>;
     }
 
     return (
@@ -30,7 +30,7 @@ const SinglePost = props => {
             <article className="media box has-background-link-light">
                 <figure class="media-left">
                     <p class="image is-64x64">
-                        <img src={Bottle}></img>
+                        <img src={Group}></img>
                     </p>
                 </figure>
                 <div class="media-content">

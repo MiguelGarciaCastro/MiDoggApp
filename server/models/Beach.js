@@ -1,12 +1,13 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const brewerySchema = new Schema(
+const beachSchema = new Schema(
   {
     id: {
       type: String,
       required: true
-    }
+    },
+    address: [Address]
   },
   {
     toJSON: {
@@ -15,6 +16,6 @@ const brewerySchema = new Schema(
   }
 );
 
-const Brewery = model('Brewery', brewerySchema);
+const Beach = model('Beach', beachSchema);
 
-module.exports = Brewery;
+module.exports = Beach;

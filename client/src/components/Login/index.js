@@ -51,7 +51,7 @@ function Login(props) {
                   <div class="control has-icons-left">
                     <input
                       type="username"
-                      placeholder="e.g. johndoe"
+                      placeholder="e.g. janedoe"
                       className="input"
                       name="username"
                       value={formState.username}

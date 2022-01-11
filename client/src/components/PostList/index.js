@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentList from '../CommentList';
-import Cheers from '../../public/images/cheers.png';
+import Group from '../../public/images/group.png';
 
 
 const PostList = ({ posts }) => {
@@ -17,7 +17,7 @@ const PostList = ({ posts }) => {
                 <article className="media">
                     <figure class="media-left">
                         <p class="image is-64x64">
-                            <img src={Cheers}></img>
+                            <img src={group}></img>
                         </p>
                     </figure>
                     <div class="media-content">

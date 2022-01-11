@@ -1,5 +1,5 @@
 {
-  "name": "brew-3",
+  "name": "midogapp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,6 +23,6 @@
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed"
   },
-  "author": "",
+  "author": "Jason, Max, Miguel, and Travis",
   "license": "ISC"
 }

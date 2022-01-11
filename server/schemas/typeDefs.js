@@ -5,38 +5,16 @@ const typeDefs = gql`
     _id: ID
     username: String
     city: String
-    friendCount: Int
     posts: [Post]
-    favorites: [Brewery]
   }
-
-  type Doggo {
-    _id: ID
-    careTaker: [User]
-    bread: String
-    age: String
-    socialLevel: String
-    needs: String
-    isBig: Boolean
-  }
-
-  type Location {
-    type: String
-    name: String
-    region: String
-    address: String
-    city: String
-    zip: String
-    mileMarker: String
-    website: String
-    phone: String
-    bigDogAllowed: Boolean
-    dogCount: Int
-    dogFee: Int
-    offLeash: Boolean
-    longitude: String
-    latitude: String
-  }
+  
+  type Dog {
+     id: String
+     human: [User]
+     breed: String
+     dob: String
+     isBig: bool
+     }    
 
   type Post {
     _id: ID
@@ -62,26 +40,103 @@ const typeDefs = gql`
     country: String
   }
 
+  type City {
+    id: String
+    hotels: [Hotel]
+    parks: [Park]
+    groomers: [Groomer]
+    stores: [Store]
+    boarding: [Boarder]
+    campgrounds: [Campground]
+    beaches: [Beach]
+    trails: [Trail]
+    restaurants: [Restaurant]
+    veterinarians: [Veterinarian]
+    comments: [Comment]
+  }
   
+  type: Veterinarian {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Restaurant {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Trail {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Beach {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Campground {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Boarding {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Store {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Groomer {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Park {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Hotel {
+  _id: ID
+  name: String
+  address: [Address]
+  comments: [Comment]
 
-  type Brewery {
-    id: ID
   }
 
   type Auth {
     token: ID!
     user: User
   }
-type Apikey {
-  value: String
-}
+
   type Query {
     me: User
     users: [User]
     user(username: String!): User
     posts(username: String): [Post]
     post(_id: ID!): Post
-    env: Apikey
   }
 
   type Mutation {
@@ -92,12 +147,6 @@ type Apikey {
     addPost(body: String!): Post
 
     addComment(postId: ID!, commentBody: String!): Post
-
-    addBrewery(id: ID!): Brewery
-
-    removeBrewery(id: ID!): Brewery
-
-    addFriend(friendId: ID!): User
   }
 `;
 
