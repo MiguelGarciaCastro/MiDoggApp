@@ -37,7 +37,7 @@ const CommentForm = ({ postId }) => {
         <div>
             <p className={`${characterCount === 150 || error ? 'text-error' : ''}`}>
                 Character Count: {characterCount}/150
-                {error && <span> - Something went wrong...</span>}
+                {error && <span> Something went wrong. (And it wasn't the dog's fault!) </span>}
             </p>
             <form class="media-content" onSubmit={handleFormSubmit}>
                 <div class="field">
