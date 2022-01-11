@@ -22,7 +22,7 @@ const dogSchema = new Schema(
             }
         ],
         dob: {
-          type: date
+          type: String
         },
         isBig: {
           type: bool
