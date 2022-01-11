@@ -37,7 +37,7 @@ import Auth from '../../utils/auth';
                     type="text"
                     placeholder="Select your city"
                     //onChange={(e) => setCity(e.target.value)}
-            <div class="select">
+            <div className="select">
               <select id="dropdown">
                 <option id="selected"><a class="selected">Select a City Near You</a></option> 
                 <option>Alpena</option>
@@ -71,7 +71,6 @@ import Auth from '../../utils/auth';
                     className="button is-warning is-round is-medium"
                     id="searchBtn"
                     onClick={submitHandler}
-                    //key={brewery.id}
                   >
                     Search
                   </a>
@@ -81,7 +80,6 @@ import Auth from '../../utils/auth';
           </div>
         </div>
       </div>
-
       <div className={activeModal ? "is-active" : "modal"} id="modalBox">
         <div className="modal-background">
           <div className="modal-card">
