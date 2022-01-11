@@ -6,6 +6,14 @@ const typeDefs = gql`
     username: String
     posts: [Post]
   }
+  
+  type Dog {
+     id: String
+     human: [User]
+     breed: String
+     dob: String
+     isBig: bool
+     }    
 
   type Post {
     _id: ID
