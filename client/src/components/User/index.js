@@ -4,8 +4,8 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
-import flights from "../../public/images/catchFlights.png";
-import cheers from "../../public/images/cheers.png";
+import beagle from "../../public/images/beagle.png";
+import logo from "../../public/images/logo.png";
 import { useStoreContext } from "../../utils/GlobalState";
 
 export default function Nav() {
@@ -42,7 +42,7 @@ export default function Nav() {
   }
 
   if (loading) {
-    return <div>Something is brewing...</div>;
+    return <div>Loading... Give your dog some attention while you wait!</div>;
   }
 
   if (!user.username) {
@@ -73,7 +73,7 @@ export default function Nav() {
               </p>
               <br />
               <p className="tagline">
-                The users profile bio (need to make box that can be edited)
+                User Profile
               </p>
             </div>
             <div className="column is-2-tablet is-4-mobile has-text-centered">
@@ -98,7 +98,7 @@ export default function Nav() {
                   <span className="icon">
                     <i className="fa fa-list"></i>
                   </span>
-                  <span>My Favorite Breweries</span>
+                  <span>My Favorite Places</span>
                 </a>
               </li>
               <li className="link">
@@ -112,54 +112,11 @@ export default function Nav() {
             </ul>
           </div>
         </div>
-        <div className="box">
-          <div className="columns">
-            <div className="column is-2-tablet user-property-count has-text-centered">
-              <p className="subtitle is-5">
-                <strong></strong>
-                My Breweries
-              </p>
-            </div>
-            <div className="column is-8">
-              <p className="control has-addons">
-                <input
-                  className="input"
-                  placeholder="Search your favorited breweries"
-                  type="text"
-                ></input>
-                <br />
-                <br />
-                <button className="button is-link is-fullwidth">Search</button>
-                <br />
-                {brewery.map((favorite) => (
-                  <li
-                    className="has-text-centered has-text-weight-bold"
-                    key={favorite.id}
-                  >
-                    <br />
-                    {favorite.name}
-                    <br />
-                    Address: {favorite.street}
-                    <br />
-                     {favorite.city}, {favorite.state}{" "}
-                    {favorite.postal_code}
-                    <br />
-                    Phone: {favorite.phone}
-                    <br />
-                    Type: {favorite.brewery_type}
-                    <br />
-                    <a target="_blank" href={favorite.website_url}>{favorite.website_url}</a>
-                  </li>
-                ))}
-              </p>
-            </div>
-          </div>
-        </div>
         <hr />
         <div>
-          <img src={flights}></img>
+          <img src={beagle}></img>
           <h3 className="has-text-centered has-text-weight-bold">
-            (Beer flights of course!)
+            (User Profile!)
           </h3>
         </div>
       </div>

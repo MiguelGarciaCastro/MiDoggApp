@@ -43,7 +43,7 @@ export default function SignUp(props) {
                 <form class="box" onSubmit={handleFormSubmit}>
                   <div className="field">
                     <h3 class="text-center is-size-4 has-text-centered has-text-weight-bold">
-                    Join the Brew Crew!
+                    Join MiDogApp!
                     </h3>
                     <label for="username-signup">Username:</label>
                     <br />

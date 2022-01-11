@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import "./style.css"
-import pictureprofile from "../../public/images/Ian.png"
-import beer from "../../public/images/cheers.png";
+import pictureprofile from "../../public/images/pug.png"
+import Logo from "../../public/images/logo.png";
 
 function BeerPhoto() {
     return (
         <div>
             <img
-                src={beer}
-                alt="Cheers"
+                src={logo}
+                alt="Logo"
             />
         </div>
     )

@@ -2,10 +2,10 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
 
-import cheers from '../../public/images/cheers.png';
+import logo from '../../public/images/logo.png';
 import PostList from '../PostList';
 import PostForm from '../PostForm';
-import PostDrink from '../../public/images/postDrink.png';
+import group from '../../public/images/group.png';
 import Auth from '../../utils/auth';
 
 export default function Social() {
@@ -29,12 +29,12 @@ export default function Social() {
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-full is-centered">
-                    <img src={cheers} alt="Logo" className="images image is-128x128 is-inline-block"></img>
+                    <img src={logo} alt="Logo" className="images image is-128x128 is-inline-block"></img>
                     <h1 class="title text-light">
-                        BrewMap Blog
+                        MyDog Blog
                     </h1>
                     <h2 class="subtitle text-light">
-                    Sharing about brews with your crew.
+                    Sharing about your dog on your blog.
                     </h2>
                     <hr />
                 </div>
@@ -43,13 +43,13 @@ export default function Social() {
             </div>
             <article class="column">
                 {loading ? (
-                    <div>Something is brewing!</div>
+                    <div>Loading... Give your dog some attention while you wait!</div>
                 ) : (
                     <PostList posts={posts}/>
                 )}
             </article>
             <hr />
-            <img src={PostDrink}></img>
+            <img src={group}></img>
             <hr />
             <div>
                 {loggedIn && (
