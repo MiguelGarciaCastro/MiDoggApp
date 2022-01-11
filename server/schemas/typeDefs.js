@@ -4,9 +4,7 @@ const typeDefs = gql`
   type User {
     _id: ID
     username: String
-    friendCount: Int
     posts: [Post]
-    favorites: [Brewery]
   }
 
   type Post {
@@ -33,29 +31,101 @@ const typeDefs = gql`
     country: String
   }
 
-  type Location {
-    longitude: String
-    latitude: String
-  }
-
-  type Brewery {
+  type City {
     id: ID
+    hotels: [Hotel]
+    parks: [Park]
+    groomers: [Groomer]
+    stores: [Store]
+    boarding: [Boarder]
+    campgrounds: [Campground]
+    beaches: [Beach]
+    trails: [Trail]
+    restaurants: [Restaurant]
+    veterinarians: [Vet] 
+  }
+  
+  type: Veterinarian {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Restaurant {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Trail {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Beach {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Campground {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Boarding {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Store {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Groomer {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Park {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
+  }
+  
+  type: Hotel {
+  id: ID
+  name: [BusinessName]
+  address: [Address]
+  comments: [Comment]
   }
 
   type Auth {
     token: ID!
     user: User
   }
-type Apikey {
-  value: String
-}
+
   type Query {
     me: User
     users: [User]
     user(username: String!): User
     posts(username: String): [Post]
     post(_id: ID!): Post
-    env: Apikey
   }
 
   type Mutation {
@@ -66,12 +136,6 @@ type Apikey {
     addPost(body: String!): Post
 
     addComment(postId: ID!, commentBody: String!): Post
-
-    addBrewery(id: ID!): Brewery
-
-    removeBrewery(id: ID!): Brewery
-
-    addFriend(friendId: ID!): User
   }
 `;
 
