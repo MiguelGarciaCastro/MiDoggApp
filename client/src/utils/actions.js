@@ -1,6 +1,14 @@
 
-export const UPDATE_BREWERIES = "UPDATE_BREWERIES";
+export const ADD_CITY = "ADD_TO_CITY";
+export const ADD_VETERINARIAN = "ADD_TO_VETERINARIAN";
+export const ADD_BEACH = "ADD_TO_BEACH";
+export const ADD_CAMPGROUND = "ADD_TO_CAMPGROUND";
+export const ADD_BOARDING = "ADD_TO_BOARDING";
+export const ADD_GROOMER = "ADD_TO_GROOMER";
+export const ADD_TRAIL = "ADD_TO_TRAIL";
+export const ADD_STORE = "ADD_TO_STORE";
+export const ADD_RESTAURANT = "ADD_TO_RESTAURANT";
+export const ADD_HOTEL = "ADD_TO_HOTEL";
+export const ADD_PARK = "ADD_TO_PARK";
 export const ADD_TO_FAVORITES = "ADD_TO_FAVORITES";
 export const REMOVE_FROM_FAVORITES = "REMOVE_FROM_FAVORITES";
-export const CLEAR_FAVORITES = "CLEAR_FAVORITES";
-export const TOGGLE_FAVORITES = "TOGGLE_FAVORITES";
