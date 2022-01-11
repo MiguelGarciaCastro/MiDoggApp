@@ -48,7 +48,7 @@ const typeDefs = gql`
   
   type: Veterinarian {
   id: ID
-  name: Strong
+  name: String
   address: [Address]
   comments: [Comment]
   }
