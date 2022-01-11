@@ -1,13 +1,14 @@
 const { Schema, model } = require("mongoose");
 const dateFormat = require("../utils/dateFormat");
 
-const campgroundSchema = new Schema(
+const hikingSchema = new Schema(
   {
     id: {
       type: String,
       required: true
     },
-    special_requirement: bool,
+    handicap_accessible: bool,
+    difficulty: String,
     fee: bool,
     address: [Address]
   },
@@ -18,6 +19,6 @@ const campgroundSchema = new Schema(
   }
 );
 
-const Campground = model('Campground', campgroundSchema);
+const Hiking = model('Hiking', hikingSchema);
 
-module.exports = Campground;
+module.exports = Hiking;
