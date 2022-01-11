@@ -8,7 +8,8 @@ const hotelSchema = new Schema(
       required: true
     },
     bigDog: bool,
-    fee: bool
+    fee: bool,
+    address: [Address]
   },
   {
     toJSON: {
