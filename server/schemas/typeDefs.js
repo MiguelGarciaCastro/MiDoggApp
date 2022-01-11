@@ -4,6 +4,7 @@ const typeDefs = gql`
   type User {
     _id: ID
     username: String
+    city: String
     posts: [Post]
   }
   
@@ -122,6 +123,7 @@ const typeDefs = gql`
   name: String
   address: [Address]
   comments: [Comment]
+
   }
 
   type Auth {
