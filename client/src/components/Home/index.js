@@ -53,7 +53,7 @@ import Auth from '../../utils/auth';
                 <option>Traverse City</option>
               </select>
             </div>
-                  ></input>
+                  </input>
                 </p>
                 <p className="control">
                   <a
