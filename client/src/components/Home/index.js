@@ -14,8 +14,8 @@ import Auth from '../../utils/auth';
 //  const refreshPage = () => {
 //    window.location.reload();
 //  };
-
-  return (
+function Home(){
+  return(
     // <>
       <div className="hero-body">
         <div className="container has-text-centered">
