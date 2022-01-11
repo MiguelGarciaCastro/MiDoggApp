@@ -42,7 +42,8 @@ const typeDefs = gql`
     beaches: [Beach]
     trails: [Trail]
     restaurants: [Restaurant]
-    veterinarians: [Vet] 
+    veterinarians: [Veterinarian]
+    comments: [Comment]
   }
   
   type: Veterinarian {
