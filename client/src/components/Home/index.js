@@ -1,19 +1,9 @@
 import React, { useState, useEffect } from "react";
-//import { useMutation } from "@apollo/client";
 import { Link } from 'react-router-dom';
 import group from "../../public/images/group.png";
 import logo from "../../public/images/logo.png";
-//import { ADD_BREWERY, REMOVE_BREWERY } from "../../utils/mutations";
 import StarButton from "../StarButton";
-import Cart from "../Cart";
 import Auth from '../../utils/auth';
-
-//export default function Home() {
-
-
-//  const refreshPage = () => {
-//    window.location.reload();
-//  };
 
   return (
     <>
@@ -36,10 +26,9 @@ import Auth from '../../utils/auth';
                     className="input is-medium"
                     type="text"
                     placeholder="Select your city"
-                    //onChange={(e) => setCity(e.target.value)}
-            <div class="select">
+            <div className="select">
               <select id="dropdown">
-                <option id="selected"><a class="selected">Select a City Near You</a></option> 
+                <option id="selected"><a className="selected">Select a City Near You</a></option> 
                 <option>Alpena</option>
                 <option>Ann Arbor</option>
                 <option>Bay City</option>
@@ -71,7 +60,6 @@ import Auth from '../../utils/auth';
                     className="button is-warning is-round is-medium"
                     id="searchBtn"
                     onClick={submitHandler}
-                    //key={brewery.id}
                   >
                     Search
                   </a>
