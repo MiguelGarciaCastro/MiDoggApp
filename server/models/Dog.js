@@ -16,7 +16,7 @@ const dogSchema = new Schema(
         },
         breed: [
             {
-                type:string     
+                type:String,     
                 unique: false,
                 trim: true
             }
