@@ -4,8 +4,8 @@ import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
-import flights from "../../public/images/catchFlights.png";
-import cheers from "../../public/images/cheers.png";
+import group from "../../public/images/group.png";
+import logo from "../../public/images/logo.png";
 import { useStoreContext } from "../../utils/GlobalState";
 
 export default function Nav() {
@@ -42,7 +42,7 @@ export default function Nav() {
   }
 
   if (loading) {
-    return <div>Something is brewing...</div>;
+    return <div>Bark...Bark...Woof...</div>;
   }
 
   if (!user.username) {
@@ -56,37 +56,22 @@ export default function Nav() {
           <div className="columns is-mobile is-multiline">
             <div className="column is-2">
               <span className="header-icon user-profile-image">
-                <img alt="" src={cheers}></img>
+                <img alt="" src={logo}></img>
               </span>
             </div>
             <div className="column is-4-tablet is-10-mobile name">
               <p>
                 <span className="title is-bold">{user.username}</span>
                 <hr />
-                <a
+                <div
                   className="button is-primary is-outlined"
                   href="#"
                   id="edit-preferences"
-                >
+                  >
                   Edit Preferences
-                </a>
+                </div>
               </p>
               <br />
-              <p className="tagline">
-                The users profile bio (need to make box that can be edited)
-              </p>
-            </div>
-            <div className="column is-2-tablet is-4-mobile has-text-centered">
-              <p className="stat-val">30</p>
-              <p className="stat-key">searches</p>
-            </div>
-            <div className="column is-2-tablet is-4-mobile has-text-centered">
-              <p className="stat-val">10</p>
-              <p className="stat-key">likes</p>
-            </div>
-            <div className="column is-2-tablet is-4-mobile has-text-centered">
-              <p className="stat-val">3</p>
-              <p className="stat-key">favorites</p>
             </div>
           </div>
         </div>
@@ -157,10 +142,7 @@ export default function Nav() {
         </div>
         <hr />
         <div>
-          <img src={flights}></img>
-          <h3 className="has-text-centered has-text-weight-bold">
-            (Beer flights of course!)
-          </h3>
+          <img src={group}></img>
         </div>
       </div>
     </div>
