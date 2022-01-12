@@ -4,7 +4,7 @@ import Auth from "../../utils/auth";
 import { ADD_USER } from "../../utils/mutations";
 
 export default function SignUp(props) {
-  const [formState, setFormState] = useState({ username: "", password: "" });
+  const [formState, setFormState] = useState({ username: "", password: "", name:"" });
 
   const [addUser, { error }] = useMutation(ADD_USER);
 
@@ -67,7 +67,7 @@ export default function SignUp(props) {
                       onChange={handleChange}
                     />
                   </div>
-                  <div className="field">
+                  {/* <div className="field">
                     <label for="name-signup">Name:</label>
                     <br />
                     <input
@@ -77,7 +77,7 @@ export default function SignUp(props) {
                       name="name"
                       onChange={handleChange}
                     />
-                  </div>
+                  </div> */}
                   <br />
                   <div class="field">
                     <p class="control">
