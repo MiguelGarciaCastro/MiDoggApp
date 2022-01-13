@@ -10,7 +10,7 @@ export default function Nav() {
                             <div class="column is-two-thirds has-text-left">
                                 <h1 class="title is-1">Detroit</h1>
                                 <p class="is-size-4">Dog-Friendly Places and Activities</p>
-                                <p class="is-size-5">Restaurants: </p>
+                                <p class="is-size-5">Restaurants: ASHE Supply Co, The Brooklyn Street Local, Detroit Shipping Company, Germack Coffee and Tea Shop, Jolly Pumpkin, Mercury Burger and Bar, Motor City Brewing Works, Nancy Whiskey Pub, Niki's, Woodbridge Pub </p>
                                 <p class="is-size-5">Veterinarians: </p>
                                 <p class="is-size-5">Beaches: </p>
                                 <p class="is-size-5">Campgrounds: </p>
