@@ -34,8 +34,8 @@ export default function Nav() {
 								Hotels: Baymont Inn and Suites, Candlewood Suites, Econo Lodge,
 								Quality Inn, Staybridge Suites
 							</p>
-							<p class='is-size-5'>Parks: </p>
-							<p class='is-size-5'>Trails: </p>
+							<p class='is-size-5'>Parks:  Emerald Drive Park, Fairmount Dog Park, Meadow Run Dog Park, Spring Valley Park, Woods Lake Park</p>
+							<p class='is-size-5'>Trails: Bow in the Clouds Preserve, Kleinstuck Preserve/Nature Trail, McLinden Nature Trails</p>
 						</div>
 					</div>
 				</div>
