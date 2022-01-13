@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
 const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormat');
-const datetime = new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+const datetime = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
 
-const postSchema = new Schema(
+const postSchema = new mongoose.Schema(
     {
         body: {
             type: String,

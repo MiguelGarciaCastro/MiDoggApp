@@ -1,7 +1,11 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model } = require('mongoose');
+const mongoose = require("mongoose");
+const brewery = require("./Brewery");
 const dateFormat = require("../utils/dateFormat");
+const brewerySchema = mongoose.model("Brewery").schema;
+const bcrypt = require('bcrypt');
 
-const hikingSchema = new Schema(
+const hikingSchema = new mongoose.Schema(
   {
     id: {
       type: String,
