@@ -32,8 +32,8 @@ export default function Nav() {
 							</p>
 							<p class='is-size-5'>Groomers: Poets Pet Parlor</p>
 							<p class='is-size-5'>Hotels: Econo Lodge Lakeside, Magnuson Hotel Country Inn, My Place Hotel Marquette, Quality Inn, Staybridge Suites</p>
-							<p class='is-size-5'>Parks: </p>
-							<p class='is-size-5'>Trails: </p>
+							<p class='is-size-5'>Parks: Ellwood A Mattson Lower Harbor Park, Paws Park, Presque Isle Park</p>
+							<p class='is-size-5'>Trails: Father Marquette National Memorial</p>
 						</div>
 					</div>
 				</div>
