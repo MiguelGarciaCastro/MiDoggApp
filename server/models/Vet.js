@@ -13,7 +13,7 @@ const vetSchema = new mongoose.Schema(
   },
     name: String,
     clinic_name: String,
-    phone: Number,
+    phone: int,
     website: String,
     location: [Address]
   },

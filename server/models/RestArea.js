@@ -12,7 +12,7 @@ const restAreaSchema = new mongoose.Schema(
     open: bool,
     dog_run: bool,
     vending_machines: bool,
-    handicap_spaces: Number,
+    handicap_spaces: int,
     route_direction: String,
     address: [Address]
   },
