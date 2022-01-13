@@ -37,8 +37,8 @@ export default function Nav() {
 								America Detroit Sterling Heights, La Quinta Inn and Suites
 								Detroit Utica
 							</p>
-							<p class='is-size-5'>Parks: </p>
-							<p class='is-size-5'>Trails: </p>
+							<p class='is-size-5'>Parks: Balduck Park, Detroit Dog Park, Grand Circus Park Dog Park, Midtown Dog Park, Rose Dog Park</p>
+							<p class='is-size-5'>Trails: Blue Heron Lagoon Trail, Dequindre Cut Greenway, Stone Bridge Nature Trail Head, </p>
 						</div>
 					</div>
 				</div>
