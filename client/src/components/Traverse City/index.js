@@ -18,8 +18,8 @@ export default function Nav() {
                                 <p class="is-size-5">Stores: </p>
                                 <p class="is-size-5">Groomers: </p>
                                 <p class="is-size-5">Hotels: </p>
-                                <p class="is-size-5">Parks: </p>
-                                <p class="is-size-5">Trails: </p>
+                                <p class="is-size-5">Parks: Keith J. Charters Traverse City State Park</p>
+                                <p class="is-size-5">Trails: Keith J. Charters Traverse City State Park</p>
                             </div>
                         </div>
                     </div>
