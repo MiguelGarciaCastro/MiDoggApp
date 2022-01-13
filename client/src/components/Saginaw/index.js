@@ -11,11 +11,9 @@ export default function Nav() {
                                 <h1 class="title is-1">Saginaw</h1>
                                 <p class="is-size-4">Dog-Friendly Places and Activities</p>
                                 <p class="is-size-5">Restaurants: Yogurt Yeti, G's Pizzeria Bar and Grill, Beef 'O' Brady's</p>
-                                <p class="is-size-5">Veterinarians: </p>
-                                <p class="is-size-5">Beaches: </p>
-                                <p class="is-size-5">Campgrounds: </p>
-                                <p class="is-size-5">Boarding Facilities: </p>
-                                <p class="is-size-5">Stores: </p>
+                                <p class="is-size-5">Veterinarians: At Mid-Michigan Veterinary Hospital, Veterinary Health Center</p>
+                                <p class="is-size-5">Boarding Facilities: Woodland Pet Resort</p>
+                                <p class="is-size-5">Stores: PetSmart,Pet Supplies Plus, Magoos Pet Outlet</p>
                                 <p class="is-size-5">Groomers: </p>
                                 <p class="is-size-5">Hotels: </p>
                                 <p class="is-size-5">Parks: </p>
