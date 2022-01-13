@@ -1,53 +1,41 @@
 import Profilecard from "../components/Profilecard";
-import beerImage from '../public/images/Beer Image.jpg';
-// export {beerImage};   
-
+import group from '../public/images/group.jpg';
 
 const profiles = [
     {
-        "name": "Ian",
-        "subtitle": "Resident Expert Coder",
-        "description": "Ian likes golf, SF sports, and pastrami sandwiches. He is an expert coder.   ",
-        "github": "https://nameless-plateau-89658.herokuapp.com/",
-        "email": "mailto:riosborne6@gmail.com",
-        "image": "../../public/images/Ian.png",
+        "name": "Max",
+        "subtitle": "Software Developer",
+        "description": "Max likes painting, farming, and philosophy. They are an entry-level coder.",
+        "github": "https://maxaeon.github.io/react-portfolio/"
+        "email": "mailto:maxaeonparks@gmail.com",
+        "image": "../../public/images/beagle.png",
         "id": "card-1 card-object card-object-hf"
     },
     {
-        "name": "Tela",
-        "subtitle": "The Awesome Educator",
-        "description": "HIGH SCHOOL SCIENCE TEACHER & CONTENT LEAD. Passionate about digital tools to redefine education.",
-        "github": "https://telacaul.github.io/caul-professional-portfolio/",
-        "email": "mailto:telacaul@gmail.com",
-        "image": "../../public/images/Tela.png",
+        "name": "Miguel",
+        "subtitle": "Software Developer",
+        "description": "Miguel hopes to develop software which eiher helps people or bring people together; Miguel also enjoys making and listening to music, as well as playing soccer.",
+        "github": "https://miguelgarciacastro.github.io/Portfolio_Advance/",
+        "email": "mailto:Garciamiguel7700@yahoo.com",
+        "image": "../../public/images/pug.png",
         "id": "card-2 card-object card-object-hf"
     },
     {
-        "name": "Rich",
-        "subtitle": "The Brew Master",
-        "description": "Enjoy learning and very passionate about technology. Love to eat good food and travel.",
-        "github": "https://rbsantos-code.github.io/new-portfolio/",
-        "email": "mailto:richardbriansantos91@yahoo.com",
-        "image": "../../public/images/Rich.jpg",
+        "name": "Jason",
+        "subtitle": "Software Developer",
+        "description": "Jason, in addition to building things, learning, and problem solving, also enjoys hockey and backpacking.",
+        "github": "https://github.com/derotto54",
+        "image": "../../public/images/boxer.png",
         "id": "card-3 card-object card-object-hf"
     },
     {
-        "name": "Felicia",
-        "subtitle": "The Professor",
-        "description": "Instructional Designer/Education Consultant.Lifelong learner and passion for developing elearning courses.",
-        "github": "https://harrisfd.github.io/portfolio-page/",
-        "email": "mailto:fharrisfoster@gmail.com",
-        "image": "../../public/images/Felicia Harris Foster.jpg",
+        "name": "Travis",
+        "subtitle": "Software Developer",
+        "description": "Travis is fascinated by technology as well as Health & Fitness.",
+        "github": "https://tschram93.github.io/portfolio/",
+        "email": "mailto:Tschram93@gmail.com",
+        "image": "../../public/images/collie.png",
         "id": "card-4 card-object card-object-hf"
-    },
-    {
-        "name": "Jennifer",
-        "subtitle": "Back-End Expert Coder",
-        "description": "Junior developer with a background in health sciences, eager to contribute at the intersection of medicine and technology",
-        "github": "https://njthanhtrang.github.io/2.-Advanced-CSS-Challenge-Professional-Portfolio/ ",
-        "email": "mailto:njthanhtrang@gmail.com",
-        "image": "../../public/images/Jennifer.png",
-        "id": "card-5 card-object card-object-hf"
     },
 
 ]
