@@ -12,12 +12,12 @@ export default function Nav() {
                                 <p class="is-size-4">Dog-Friendly Places and Activities</p>
                                 <p class="is-size-5">Restaurants: </p>
                                 <p class="is-size-5">Veterinarians: </p>
-                                <p class="is-size-5">Beaches: </p>
-                                <p class="is-size-5">Campgrounds: </p>
-                                <p class="is-size-5">Boarding Facilities: </p>
-                                <p class="is-size-5">Stores: </p>
-                                <p class="is-size-5">Groomers: </p>
-                                <p class="is-size-5">Hotels: </p>
+                                <p class="is-size-5">Beaches: Zoll Street Beach</p>
+                                <p class="is-size-5">Campgrounds: Timber Ridge RV and Recreation Resort, Ranch Rudolf</p>
+                                <p class="is-size-5">Boarding Facilities: SunDog Boarding Kennel, Aunt Tara's Creative Canine Solutions</p>
+                                <p class="is-size-5">Stores: Grand Traverse Pet Supply, PetSmart</p>
+                                <p class="is-size-5">Groomers: Doggie Stylez,  Backcountry Dog Salon</p>
+                                <p class="is-size-5">Hotels: Sleep Inn and Suites Acme, Travelodge, Traverse Bay Inn </p>
                                 <p class="is-size-5">Parks: Keith J. Charters Traverse City State Park</p>
                                 <p class="is-size-5">Trails: Keith J. Charters Traverse City State Park</p>
                             </div>
