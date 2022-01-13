@@ -20,11 +20,9 @@ export default function Nav() {
 								Grosse Pointe Animal Clinic, Jefferson Veterinary Center,
 								Michigan Animal Hospital,
 							</p>
-							<p class='is-size-5'>Beaches: </p>
-							<p class='is-size-5'>Campgrounds: </p>
-							<p class='is-size-5'>Boarding Facilities: </p>
-							<p class='is-size-5'>Stores: </p>
-							<p class='is-size-5'>Groomers: </p>
+							<p class='is-size-5'>Boarding Facilities: Canine to Five, City Bark, Chets Pets, Put'n On The Dog</p>
+							<p class='is-size-5'>Stores: Cass Corridog, City Park, Detroit K9 Pet Supply, PetCo, Pet Supplies Plus</p>
+							<p class='is-size-5'>Groomers: Chets Pets</p>
 							<p class='is-size-5'>Hotels: </p>
 							<p class='is-size-5'>Parks: </p>
 							<p class='is-size-5'>Trails: </p>
