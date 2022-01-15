@@ -6,7 +6,7 @@ import kalamazoo from "../../assets/img/kalamazoo.png";
 import marquette from "../../assets/img/marquette.png";
 import lansing from "../../assets/img/lansing.png";
 
-const DogFriendly = (singleProject) => {
+const Cities = (singleProject) => {
 
   const projectList = [
     {
@@ -46,4 +46,4 @@ const DogFriendly = (singleProject) => {
   );
 };
 
-export default PetFriendly;
+export default Cities;
