@@ -8,6 +8,11 @@ import group from "../../public/images/group.png";
 import logo from "../../public/images/logo.png";
 import { useStoreContext } from "../../utils/GlobalState";
 
+import Posts from '../Posts';
+import { Link } from 'react-router-dom';
+import CommentList from '../CommentList';
+
+
 export default function Nav() {
   const [state, dispatch] = useStoreContext();
   console.log(state);
@@ -26,7 +31,6 @@ export default function Nav() {
   useEffect(() => {
     console.log("USE EFFECT RUNNING");
     if (user.favorites) {
-      // making multiple calls inside any loop would return 'pending' to make it so that everything is ready before being set, we need to utlilize promises
       Promise.all(
         user.favorites.map((favorite) =>
           fetch(`https://api.openbrewerydb.org/breweries/${favorite.id}`)
@@ -80,17 +84,6 @@ export default function Nav() {
             <ul>
               <li className="link is-active">
                 <a>
-                  <span className="icon">
-                    <i className="fa fa-list"></i>
-                  </span>
-                  <span>My Favorite Breweries</span>
-                </a>
-              </li>
-              <li className="link">
-                <a>
-                  <span className="icon">
-                    <i className="fa fa-thumbs-up"></i>
-                  </span>
                   <span>Blog Posts</span>
                 </a>
               </li>
@@ -98,46 +91,10 @@ export default function Nav() {
           </div>
         </div>
         <div className="box">
-          <div className="columns">
-            <div className="column is-2-tablet user-property-count has-text-centered">
-              <p className="subtitle is-5">
-                <strong></strong>
-                My Breweries
-              </p>
-            </div>
-            <div className="column is-8">
-              <p className="control has-addons">
-                <input
-                  className="input"
-                  placeholder="Search your favorited breweries"
-                  type="text"
-                ></input>
-                <br />
-                <br />
-                <button className="button is-link is-fullwidth">Search</button>
-                <br />
-                {brewery.map((favorite) => (
-                  <li
-                    className="has-text-centered has-text-weight-bold"
-                    key={favorite.id}
-                  >
-                    <br />
-                    {favorite.name}
-                    <br />
-                    Address: {favorite.street}
-                    <br />
-                     {favorite.city}, {favorite.state}{" "}
-                    {favorite.postal_code}
-                    <br />
-                    Phone: {favorite.phone}
-                    <br />
-                    Type: {favorite.brewery_type}
-                    <br />
-                    <a target="_blank" href={favorite.website_url}>{favorite.website_url}</a>
-                  </li>
-                ))}
-              </p>
-            </div>
+          
+            <div>
+<Posts></Posts>
+            
           </div>
         </div>
         <hr />
