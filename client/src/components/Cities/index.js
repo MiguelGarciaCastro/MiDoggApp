@@ -1,10 +1,12 @@
 import React from "react";
 import Projects from "../../components/Project";
-import detroit from "../../public/images/detroit.png";
-import traverse from "../../public/images/traverse.png";
-import kalamazoo from "../../public/images/kalamazoo.png";
-import marquette from "../../public/images/marquette.png";
-import lansing from "../../public/images/lansing.png";
+import detroit from "../../public/images/detroit.jpg";
+import traverse from "../../public/images/traverse.jpg";
+import kalamazoo from "../../public/images/kalamazoo.jpg";
+import marquette from "../../public/images/marquette.jpg";
+import lansing from "../../public/images/lansing.jpg";
+import claymation from "../../public/images/claymation.jpg";
+
 
 const Cities = (singleProject) => {
 
