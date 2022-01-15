@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Redirect, useParams } from "react-router";
+import { Redirect, useParams, Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
-import flights from "../../public/images/catchFlights.png";
-import cheers from "../../public/images/cheers.png";
+import group from "../../public/images/group.png";
+import logo from "../../public/images/logo.png";
 import { useStoreContext } from "../../utils/GlobalState";
+
+import Posts from '../Posts';
+import { Link } from 'react-router-dom';
+import CommentList from '../CommentList';
+
 
 export default function Nav() {
   const [state, dispatch] = useStoreContext();
@@ -26,7 +31,6 @@ export default function Nav() {
   useEffect(() => {
     console.log("USE EFFECT RUNNING");
     if (user.favorites) {
-      // making multiple calls inside any loop would return 'pending' to make it so that everything is ready before being set, we need to utlilize promises
       Promise.all(
         user.favorites.map((favorite) =>
           fetch(`https://api.openbrewerydb.org/breweries/${favorite.id}`)
@@ -42,7 +46,7 @@ export default function Nav() {
   }
 
   if (loading) {
-    return <div>Something is brewing...</div>;
+    return <div>Bark...Bark...Woof...</div>;
   }
 
   if (!user.username) {
@@ -56,37 +60,22 @@ export default function Nav() {
           <div className="columns is-mobile is-multiline">
             <div className="column is-2">
               <span className="header-icon user-profile-image">
-                <img alt="" src={cheers}></img>
+                <img alt="" src={logo}></img>
               </span>
             </div>
             <div className="column is-4-tablet is-10-mobile name">
               <p>
                 <span className="title is-bold">{user.username}</span>
                 <hr />
-                <a
+                <div
                   className="button is-primary is-outlined"
                   href="#"
                   id="edit-preferences"
-                >
+                  >
                   Edit Preferences
-                </a>
+                </div>
               </p>
               <br />
-              <p className="tagline">
-                The users profile bio (need to make box that can be edited)
-              </p>
-            </div>
-            <div className="column is-2-tablet is-4-mobile has-text-centered">
-              <p className="stat-val">30</p>
-              <p className="stat-key">searches</p>
-            </div>
-            <div className="column is-2-tablet is-4-mobile has-text-centered">
-              <p className="stat-val">10</p>
-              <p className="stat-key">likes</p>
-            </div>
-            <div className="column is-2-tablet is-4-mobile has-text-centered">
-              <p className="stat-val">3</p>
-              <p className="stat-key">favorites</p>
             </div>
           </div>
         </div>
@@ -95,17 +84,6 @@ export default function Nav() {
             <ul>
               <li className="link is-active">
                 <a>
-                  <span className="icon">
-                    <i className="fa fa-list"></i>
-                  </span>
-                  <span>My Favorite Breweries</span>
-                </a>
-              </li>
-              <li className="link">
-                <a>
-                  <span className="icon">
-                    <i className="fa fa-thumbs-up"></i>
-                  </span>
                   <span>Blog Posts</span>
                 </a>
               </li>
@@ -113,54 +91,15 @@ export default function Nav() {
           </div>
         </div>
         <div className="box">
-          <div className="columns">
-            <div className="column is-2-tablet user-property-count has-text-centered">
-              <p className="subtitle is-5">
-                <strong></strong>
-                My Breweries
-              </p>
-            </div>
-            <div className="column is-8">
-              <p className="control has-addons">
-                <input
-                  className="input"
-                  placeholder="Search your favorited breweries"
-                  type="text"
-                ></input>
-                <br />
-                <br />
-                <button className="button is-link is-fullwidth">Search</button>
-                <br />
-                {brewery.map((favorite) => (
-                  <li
-                    className="has-text-centered has-text-weight-bold"
-                    key={favorite.id}
-                  >
-                    <br />
-                    {favorite.name}
-                    <br />
-                    Address: {favorite.street}
-                    <br />
-                     {favorite.city}, {favorite.state}{" "}
-                    {favorite.postal_code}
-                    <br />
-                    Phone: {favorite.phone}
-                    <br />
-                    Type: {favorite.brewery_type}
-                    <br />
-                    <a target="_blank" href={favorite.website_url}>{favorite.website_url}</a>
-                  </li>
-                ))}
-              </p>
-            </div>
+          
+            <div>
+<Posts></Posts>
+            
           </div>
         </div>
         <hr />
         <div>
-          <img src={flights}></img>
-          <h3 className="has-text-centered has-text-weight-bold">
-            (Beer flights of course!)
-          </h3>
+          <img src={group}></img>
         </div>
       </div>
     </div>

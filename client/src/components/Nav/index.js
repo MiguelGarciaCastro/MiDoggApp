@@ -1,5 +1,5 @@
 import React from 'react';
-import cheers from '../../public/images/cheers.png';
+import cheers from '../../public/images/logo.png';
 import Auth from '../../utils/auth';
 import { Link } from "react-router-dom";
 

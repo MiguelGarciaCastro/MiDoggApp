@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { Link } from 'react-router-dom';
-// import group from "../../public/images/";
-// import logo from "../../public/images/logo.png";
+
 import { ADD_POST, REMOVE_POST } from "../../utils/mutations";
+import group from "../../public/images/group.png";
+import logo from "../../public/images/logo.png";
 import StarButton from "../StarButton";
 import Cart from "../Cart";
 import Auth from '../../utils/auth';

@@ -1,11 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_ME_BASIC, QUERY_POSTS } from '../../utils/queries';
+import { QUERY_POSTS } from '../../utils/queries';
 
-import PostList from '../PostList';
-import PostForm from '../PostForm';
-import group from "../../public/images/group.png";
 import logo from "../../public/images/logo.png";
+import PostList from '../PostList';
 import Auth from '../../utils/auth';
 
 export default function Social() {
@@ -31,10 +29,10 @@ export default function Social() {
                 <div class="column is-full is-centered">
                     <img src={logo} alt="Logo" className="images image is-128x128 is-inline-block"></img>
                     <h1 class="title text-light">
-                        MiDogApp
+                        Bark Blog!
                     </h1>
                     <h2 class="subtitle text-light">
-        
+                    
                     </h2>
                     <hr />
                 </div>
@@ -43,23 +41,12 @@ export default function Social() {
             </div>
             <article class="column">
                 {loading ? (
-                    <div>Something is brewing!</div>
+                    <div>Bark...Bark...Woof...</div>
                 ) : (
                     <PostList posts={posts}/>
                 )}
             </article>
-            <hr />
             
-            <hr />
-            <div>
-                {loggedIn && (
-                    <PostForm />
-                )}
-            </div>
-            <br />
-            <div class="column is-full is-centered">
-                <img src={group}></img>
-            </div>            
         </div>
     )
 }
