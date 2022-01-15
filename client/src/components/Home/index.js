@@ -1,29 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { Link } from 'react-router-dom';
-import cheers from "../../public/images/cheers.png";
-import BingMapsReact from "bingmaps-react";
-import BrewFont from "../../public/images/brewFont.png";
-import { ADD_BREWERY, REMOVE_BREWERY } from "../../utils/mutations";
+// import group from "../../public/images/";
+// import logo from "../../public/images/logo.png";
+import { ADD_POST, REMOVE_POST } from "../../utils/mutations";
 import StarButton from "../StarButton";
 import Cart from "../Cart";
 import Auth from '../../utils/auth';
 
+
 export default function Home() {
   const [activeModal, SetActiveModal] = useState(false);
 
-  const [brewery, setBrewery] = useState([]);
 
   const [pins, setPins] = useState([]);
 
-  const [city, setCity] = useState("");
 
-  const [longitude, setlongitude] = useState(0);
-
-  const [latitude, setlatitude] = useState(0);
-
-  const [addBrewery] = useMutation(ADD_BREWERY);
-  const [removeBrewery] = useMutation(REMOVE_BREWERY);
+  const [addPost] = useMutation(ADD_POST);
+  const [removePost] = useMutation(REMOVE_POST);
 
   const toggleActive = () => {
     SetActiveModal(!activeModal);
@@ -37,22 +31,6 @@ export default function Home() {
 
   console.log("pins", pins);
 
-  const submitHandler = () => {
-    fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setBrewery(data);
-        console.log(data);
-        setlongitude(data[0].longitude);
-        setlatitude(data[0].latitude);
-      })
-      .then(() => toggleActive())
-      .catch((error) => {
-        console.log(error);
-        window.location.reload();
-        alert('Brewery info not available, try another search!');
-    })
-  };
 
   const refreshPage = () => {
     window.location.reload();
@@ -62,7 +40,7 @@ export default function Home() {
     console.log(e.target);
     const id = e.target.value;
     console.log(id);
-    const { data } = await addBrewery({variables: { id: id }});
+    const { data } = await addPost({variables: { id: id }});
     console.log(data);
     console.log(id);
   };
@@ -71,7 +49,7 @@ export default function Home() {
     console.log(e.target);
     const id = e.target.value;
     console.log(id);
-    const { data } = await removeBrewery({variables: { id: id }});
+    const { data } = await removePost({variables: { id: id }});
     console.log(data);
     console.log(id);
   };
@@ -80,16 +58,15 @@ export default function Home() {
     <>
       <div className="hero-body">
         <div className="container has-text-centered">
-        <Cart removeHandler= {removeHandler} />
           <div className="column is-full is-centered">
             <img
-              src={cheers}
+              src={logo}
               alt="Logo"
               className="images image is-128x128 is-inline-block"
             ></img>
-            <h1 className="title text-light">BrewMap</h1>
+            <h1 className="title text-light">MiDogMap</h1>
             <h2 className="subtitle text-light">
-              Finding the brews so you can cruise.
+              Info for your dog! because face it, they are in charge.            
             </h2>
             <div className="box">
               <div className="field is-grouped">
@@ -97,19 +74,48 @@ export default function Home() {
                   <input
                     className="input is-medium"
                     type="text"
-                    placeholder="Enter your city"
-                    onChange={(e) => setCity(e.target.value)}
-                  ></input>
+                    placeholder="Select your city">
+                  </input>
+                    {/*onChange={(e) => setCity(e.target.value)}*/}
+            <div class="select">
+              <select id="dropdown">
+                <option id="selected">
+                  <div className="selected">Select a City Near You</div>
+                </option> 
+                <option>Alpena</option>
+                <option>Ann Arbor</option>
+                <option>Bay City</option>
+                <option>Detroit</option>
+                <option>Escanaba</option>
+                <option>Flint</option>
+                <option>Grand Rapids</option>
+                <option>Holland</option>
+                <option>Houghton</option>
+                <option>Kalamazoo</option>
+                <option>Lansing</option>
+                <option>Ludington</option>
+                <option>Mackinac Island</option>
+                <option>Marquette</option>
+                <option>Midland</option>        
+                <option>Mt. Pleasant</option>
+                <option>Munising</option>
+                <option>Muskegon</option>
+                <option>Port Huron</option>
+                <option>Sault Ste. Marie</option>
+                <option>Saginaw</option>
+                <option>Traverse City</option>
+              </select>
+            </div>
+                 {/*</input>*/}
                 </p>
                 <p className="control">
-                  <a
+                  <div
                     className="button is-warning is-round is-medium"
                     id="searchBtn"
                     onClick={submitHandler}
-                    key={brewery.id}
                   >
                     Search
-                  </a>
+                  </div>
                 </p>
               </div>
             </div>
@@ -121,7 +127,7 @@ export default function Home() {
         <div className="modal-background">
           <div className="modal-card">
             <header className="modal-card-head has-background-primary">
-              <p className="modal-card-title">BrewMap</p>
+              <p className="modal-card-title">MiDogMap</p>
               <button
                 className="delete"
                 aria-label="close"
@@ -131,47 +137,9 @@ export default function Home() {
             <section className="modal-card-body">
               <div className="columns">
                 <div className="column is-half brew-data">
-                  <img src={BrewFont} />
-                  <hr />
-                  <ul className="has-text-weight-bold is-family-monospace has-text-link">
-                  <div>
-                    {brewery.map(brew => <li onClick={clickHandler} data={JSON.stringify({
-                      center: {
-                        latitude: brew.latitude,
-                        longitude: brew.longitude
-                      }
-                    })}>
-                      - {brew.name}
-                      <br />
-                      {
-                        Auth.loggedIn() ?
-                        <StarButton favorite={brew} saveHandler= {saveHandler} removeHandler= {removeHandler} />
-                        :
-                        <Link to='/login'>
-                          <button className="button is-small is-danger is-light">login to favorite</button>
-                        </Link>
-                      }
-                    </li>)}
-                  </div>
-                  </ul>
+                  <img src={logo} />
                 </div>
                 <div className="column auto">
-                  {/* <div class="map"></div> */}
-                  <BingMapsReact
-                    bingMapsKey="Ava6c7xEN-FISpqll60LNKEhdYNkr0RGC2jZoFb2l02vg2lTmQ3aLT8BFWivGKEO"
-                    height="auto"
-                    mapOptions={{
-                      navigationBarMode: "square",
-                    }}
-                    width="300px"
-                    viewOptions={{
-                      center: { longitude: longitude, latitude: latitude },
-                      mapTypeId: "canvasLight",
-                    }}
-                    pushPinsWithInfoboxes={
-                      pins
-                    }
-                  />
                 </div>
               </div>
             </section>
@@ -200,12 +168,8 @@ export default function Home() {
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
         crossorigin="anonymous"
       ></script>
-      <script
-        type="text/javascript"
-        src="https://www.bing.com/api/maps/mapcontrol?callback=GetMap"
-      ></script>
       <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
       <script src="/javascript/api.js"></script>
     </>
-  );
+  )
 }
