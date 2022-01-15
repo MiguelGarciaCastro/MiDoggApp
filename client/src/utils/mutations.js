@@ -66,3 +66,11 @@ export const ADD_COMMENT = gql`
 `;
 
 
+
+export const REMOVE_POST = gql`
+  mutation removePost($id: ID!) {
+    removePost(id: $id) {
+      id
+    }
+  }
+`;
