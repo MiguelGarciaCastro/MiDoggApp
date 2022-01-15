@@ -38,9 +38,6 @@ const typeDefs = gql`
     latitude: String
   }
 
-  type Brewery {
-    id: ID
-  }
 
   type Auth {
     token: ID!
@@ -67,9 +64,9 @@ type Apikey {
 
     addComment(postId: ID!, commentBody: String!): Post
 
-    addBrewery(id: ID!): Brewery
+    addPost(id: ID!): Post
 
-    removeBrewery(id: ID!): Brewery
+    removePost(id: ID!): Post
 
     addFriend(friendId: ID!): User
   }

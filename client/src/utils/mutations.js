@@ -65,19 +65,4 @@ export const ADD_COMMENT = gql`
   }
 `;
 
-export const ADD_BREWERY = gql`
-  mutation addBrewery($id: ID!) {
-    addBrewery(id: $id) {
-        id
-    }
-  }
-`;
 
-
-export const REMOVE_BREWERY = gql`
-  mutation removeBrewery($id: ID!) {
-    removeBrewery(id: $id) {
-      id
-    }
-  }
-`;
