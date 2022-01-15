@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import "./style.css"
-import pictureprofile from "../../public/images/Ian.png"
 import beer from "../../public/images/cheers.png";
 
 function BeerPhoto() {
