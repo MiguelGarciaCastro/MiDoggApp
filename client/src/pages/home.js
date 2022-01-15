@@ -6,7 +6,7 @@ export default function homepage() {
     return (
         <div className="container">
            <Home />
-        </div>
+        </div>,  
         <div className="container">
            <Cities /> 
         </div>
