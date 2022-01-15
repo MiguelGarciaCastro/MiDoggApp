@@ -1,12 +1,12 @@
 import Profilecard from "../components/Profilecard";
-import group from '../public/images/group.jpg';
+import group from "../public/images/group.png"
 
 const profiles = [
     {
         "name": "Max",
         "subtitle": "Software Developer",
         "description": "Max likes painting, farming, and philosophy. They are an entry-level coder.",
-        "github": "https://maxaeon.github.io/react-portfolio/"
+        "github": "https://maxaeon.github.io/react-portfolio/",
         "email": "mailto:maxaeonparks@gmail.com",
         "image": "../../public/images/beagle.png",
         "id": "card-1 card-object card-object-hf"
@@ -14,7 +14,7 @@ const profiles = [
     {
         "name": "Miguel",
         "subtitle": "Software Developer",
-        "description": "Miguel hopes to develop software which eiher helps people or bring people together; Miguel also enjoys making and listening to music, as well as playing soccer.",
+        "description": "Miguel hopes to develop software which either helps people or bring people together; Miguel also enjoys making and listening to music, as well as playing soccer.",
         "github": "https://miguelgarciacastro.github.io/Portfolio_Advance/",
         "email": "mailto:Garciamiguel7700@yahoo.com",
         "image": "../../public/images/pug.png",
@@ -44,36 +44,17 @@ export default function aboutpage() {
         <div>
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <div id="video-box">
-                        <iframe width="1340" height="400" src="https://www.youtube.com/embed/qbP2XCGyWRY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <br />
-                        <br />
-                    </div>
+                    
                     <div id="image-group">
                         <div class="flex-parent flex-start">
-
-
-                            <div class="flex-child one">
-                                <img src="https://www.dropbox.com/s/z59bms55wbkfdo7/barrels.jpg?raw=1" alt="" />
-                            </div>
-                            
-                            <div class="flex-child two">
-                                <img src="https://www.dropbox.com/s/hqlfizn8yc5xaa0/beer-taps.jpg?raw=1" alt="" />
-                            </div>
-                            <div class="flex-child three">
-                            <img src="https://www.dropbox.com/s/btdy2jmlnfsbgrq/bar.jpg?raw=1" alt="" />
-                            </div>
                             <div class="flex-justify flex-end">
-                            <img src={beerImage} alt="beer" />
+                            <img src={group} alt="4 dogs" />
                             </div>
                             <br />
                         </div>
                     </div>
-
-
                 </div>
             </div>
-
             {profiles.map(profile => (
                 <Profilecard profile={profile} key={profile.name} />
             ))}
