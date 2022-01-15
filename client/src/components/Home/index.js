@@ -1,78 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useMutation } from "@apollo/client";
 import { Link } from 'react-router-dom';
 import group from "../../public/images/group.png";
 import logo from "../../public/images/logo.png";
-import { ADD_BREWERY, REMOVE_BREWERY } from "../../utils/mutations";
-import StarButton from "../StarButton";
-import Cart from "../Cart";
-import Auth from '../../utils/auth';
 
 export default function Home() {
-  const [activeModal, SetActiveModal] = useState(false);
-
-  const [brewery, setBrewery] = useState([]);
-
-  const [pins, setPins] = useState([]);
-
-  const [city, setCity] = useState("");
-
-  const [longitude, setlongitude] = useState(0);
-
-  const [latitude, setlatitude] = useState(0);
-
-  const [addBrewery] = useMutation(ADD_BREWERY);
-  const [removeBrewery] = useMutation(REMOVE_BREWERY);
-
-  const toggleActive = () => {
-    SetActiveModal(!activeModal);
-  };
-
-  const clickHandler = (event) => {
-    const mapData = event.target.getAttribute("data");
-    console.log(JSON.parse(mapData));
-    setPins([...pins, JSON.parse(mapData)]);
-  };
-
-  console.log("pins", pins);
-
-  const submitHandler = () => {
-    fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setBrewery(data);
-        console.log(data);
-        setlongitude(data[0].longitude);
-        setlatitude(data[0].latitude);
-      })
-      .then(() => toggleActive())
-      .catch((error) => {
-        console.log(error);
-        window.location.reload();
-        alert('Brewery info not available, try another search!');
-    })
-  };
-
+  
   const refreshPage = () => {
     window.location.reload();
-  };
-
-  const saveHandler = async (e) => {
-    console.log(e.target);
-    const id = e.target.value;
-    console.log(id);
-    const { data } = await addBrewery({variables: { id: id }});
-    console.log(data);
-    console.log(id);
-  };
-
-  const removeHandler = async (e) => {
-    console.log(e.target);
-    const id = e.target.value;
-    console.log(id);
-    const { data } = await removeBrewery({variables: { id: id }});
-    console.log(data);
-    console.log(id);
   };
 
   return (
@@ -92,11 +26,6 @@ export default function Home() {
             <div className="box">
               <div className="field is-grouped">
                 <p className="control is-expanded">
-                  <input
-                    className="input is-medium"
-                    type="text"
-                    placeholder="Select your city">
-                  </input>
                     {/*onChange={(e) => setCity(e.target.value)}*/}
             <div class="select">
               <select id="dropdown">
@@ -127,16 +56,6 @@ export default function Home() {
                 <option>Traverse City</option>
               </select>
             </div>
-                 {/*</input>*/}
-                </p>
-                <p className="control">
-                  <div
-                    className="button is-warning is-round is-medium"
-                    id="searchBtn"
-                    onClick={submitHandler}
-                  >
-                    Search
-                  </div>
                 </p>
               </div>
             </div>
@@ -149,11 +68,6 @@ export default function Home() {
           <div className="modal-card">
             <header className="modal-card-head has-background-primary">
               <p className="modal-card-title">MiDogMap</p>
-              <button
-                className="delete"
-                aria-label="close"
-                onClick={toggleActive}
-              ></button>
             </header>
             <section className="modal-card-body">
               <div className="columns">
@@ -165,20 +79,6 @@ export default function Home() {
               </div>
             </section>
             <footer className="modal-card-foot has-background-info">
-              <button
-                className="button is-info is-light is-fullwidth"
-                id="refresh"
-                onClick={refreshPage}
-              >
-                Clear
-              </button>
-              <button
-                className="button is-info is-light is-fullwidth"
-                id="close"
-                onClick={toggleActive}
-              >
-                Close
-              </button>
             </footer>
           </div>
         </div>
