@@ -1,5 +1,5 @@
 import {
-  UPDATE_BREWERIES,
+  UPDATE_POST,
   ADD_TO_FAVORITES,
   REMOVE_FROM_FAVORITES,
   CLEAR_FAVORITES,
@@ -7,11 +7,13 @@ import {
 } from "./actions";
 import { useReducer } from "react";
 
+
+
 export const reducer = (state, action) => {
   switch (action.type) {
     // if action type value is "UPDATE_BREWERIES"
     // return a new state obj with updated breweries array
-    case UPDATE_BREWERIES:
+    case UPDATE_POST:
       // return new obj with copy of state arg
       return {
         ...state,

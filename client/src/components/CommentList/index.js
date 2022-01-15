@@ -10,7 +10,7 @@ import Beericon from '../../public/images/circleBeericon.png';
 const CommentList = ({ comments }) => {
 
     const { id: postId } = useParams();
-
+    console.log(postId)
     const { loading, data } = useQuery(QUERY_POST, {
         variables: { id: postId}
     });

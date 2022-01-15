@@ -24,7 +24,7 @@ export default function Home() {
     SetActiveModal(!activeModal);
   };
 
-  const clickHandler = (event) => {
+  const submitHandler = (event) => {
     const mapData = event.target.getAttribute("data");
     console.log(JSON.parse(mapData));
     setPins([...pins, JSON.parse(mapData)]);

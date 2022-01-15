@@ -12,12 +12,39 @@ const app = express();
 
 const { authMiddleware } = require('./utils/auth');
 
+const myPlugin = {
+    // Fires whenever a GraphQL request is received from a client.
+    async requestDidStart(requestContext) {
+      console.log('Request started! Query:\n' +
+        requestContext.request.query);
+        console.log(requestContext.request)
+      return {
+        // Fires whenever Apollo Server will parse a GraphQL
+        // request to create its associated document AST.
+        async parsingDidStart(requestContext) {
+          console.log('Parsing started!');
+        },
+  
+        // Fires whenever Apollo Server will validate a
+        // request's document AST against your GraphQL schema.
+        async validationDidStart(requestContext) {
+          console.log('Validation started!');
+        },
+  
+      }
+    },
+  };
 // create  new Apollo server and pass in schema data
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: authMiddleware
+    context: authMiddleware,
+    plugins: [
+        myPlugin
+      ]
+
 });
+
 
 
 // integrate Apollo server with the Express application as middleware

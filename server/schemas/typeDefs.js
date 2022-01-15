@@ -7,7 +7,7 @@ const typeDefs = gql`
     city: String
     friendCount: Int
     posts: [Post]
-    favorites: [Brewery]
+   
   }
 
   type Doggo {
@@ -90,7 +90,7 @@ type Apikey {
 
     addComment(postId: ID!, commentBody: String!): Post
 
-    addPost(id: ID!): Post
+    
 
     removePost(id: ID!): Post
 

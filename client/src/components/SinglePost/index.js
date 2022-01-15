@@ -12,10 +12,11 @@ import Auth from '../../utils/auth';
 const SinglePost = props => {
 
     const { id: postId } = useParams();
-
+    console.log(postId)
     const { loading, data } = useQuery(QUERY_POST, {
         variables: { id: postId }
     });
+    
 
     const posts = data?.post || {};
 
