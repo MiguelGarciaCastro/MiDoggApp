@@ -9,7 +9,7 @@ import logo from "../../public/images/logo.png";
 import { useStoreContext } from "../../utils/GlobalState";
 
 import Posts from '../Posts';
-import { Link } from 'react-router-dom';
+import { link } from 'react-router-dom';
 import CommentList from '../CommentList';
 
 
@@ -28,18 +28,7 @@ export default function Nav() {
 
   const [brewery, setBrewery] = useState([]);
 
-  useEffect(() => {
-    console.log("USE EFFECT RUNNING");
-    if (user.favorites) {
-      Promise.all(
-        user.favorites.map((favorite) =>
-          fetch(`https://api.openbrewerydb.org/breweries/${favorite.id}`)
-            .then((res) => res.json())
-            .then((data) => data)
-        )
-      ).then((array) => setBrewery(array));
-    }
-  }, [user]);
+
 
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Redirect to="/user" />;
