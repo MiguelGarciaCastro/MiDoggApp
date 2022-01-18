@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function Nav() {
     return (
-        <section className="hero is-fullheight">
-                <div className="hero-body">
-                    <div className="container has-text-centered">
-                        <div className="columns is-8 is-variable ">
-                            <div className="column is-two-thirds has-text-left">
-                                <h1 className="title is-1">Contact Us</h1>
-                                <p className="is-size-4">Let us know what you think about BrewMaps!</p>
-                                <p className="is-size-5">Reach out with any questions, concerns or ideas for future development.</p>
+        <section class="hero is-fullheight">
+                <div class="hero-body">
+                    <div class="container has-text-centered">
+                        <div class="columns is-8 is-variable ">
+                            <div class="column is-two-thirds has-text-left">
+                                <h1 class="title is-1">Contact Us</h1>
+                                <p class="is-size-4">Let us know what you think about MiDogApp!</p>
+                                <p class="is-size-5">Reach out with any questions, concerns or ideas for future development.</p>
                             </div>
                             <div className="column is-one-third has-text-left">
                                 <div className="field">
