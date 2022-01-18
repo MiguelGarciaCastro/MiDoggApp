@@ -9,7 +9,8 @@ import logo from "../../public/images/logo.png";
 import { useStoreContext } from "../../utils/GlobalState";
 
 import Posts from '../Posts';
-import { link } from 'react-router-dom';
+
+
 import CommentList from '../CommentList';
 
 
@@ -26,7 +27,7 @@ export default function Nav() {
   const user = data?.me || data?.user || {};
   console.log(user);
 
-  const [brewery, setBrewery] = useState([]);
+  const [post, setPost] = useState([]);
 
 
 
@@ -53,7 +54,7 @@ export default function Nav() {
               </span>
             </div>
             <div className="column is-4-tablet is-10-mobile name">
-              <p>
+              <div>
                 <span className="title is-bold">{user.username}</span>
                 <hr />
                 <div
@@ -63,7 +64,7 @@ export default function Nav() {
                   >
                   Edit Preferences
                 </div>
-              </p>
+              </div>
               <br />
             </div>
           </div>

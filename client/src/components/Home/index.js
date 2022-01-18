@@ -1,34 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { Link } from 'react-router-dom';
+
+import { ADD_POST, REMOVE_POST } from "../../utils/mutations";
 import group from "../../public/images/group.png";
 import logo from "../../public/images/logo.png";
-import { ADD_BREWERY, REMOVE_BREWERY } from "../../utils/mutations";
 import StarButton from "../StarButton";
 import Cart from "../Cart";
 import Auth from '../../utils/auth';
 
+
 export default function Home() {
   const [activeModal, SetActiveModal] = useState(false);
 
-  const [brewery, setBrewery] = useState([]);
 
   const [pins, setPins] = useState([]);
 
-  const [city, setCity] = useState("");
 
-  const [longitude, setlongitude] = useState(0);
-
-  const [latitude, setlatitude] = useState(0);
-
-  const [addBrewery] = useMutation(ADD_BREWERY);
-  const [removeBrewery] = useMutation(REMOVE_BREWERY);
+  const [addPost] = useMutation(ADD_POST);
+  const [removePost] = useMutation(REMOVE_POST);
 
   const toggleActive = () => {
     SetActiveModal(!activeModal);
   };
 
-  const clickHandler = (event) => {
+  const submitHandler = (event) => {
     const mapData = event.target.getAttribute("data");
     console.log(JSON.parse(mapData));
     setPins([...pins, JSON.parse(mapData)]);
@@ -36,22 +32,6 @@ export default function Home() {
 
   console.log("pins", pins);
 
-  const submitHandler = () => {
-    fetch(`https://api.openbrewerydb.org/breweries?by_city=${city}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setBrewery(data);
-        console.log(data);
-        setlongitude(data[0].longitude);
-        setlatitude(data[0].latitude);
-      })
-      .then(() => toggleActive())
-      .catch((error) => {
-        console.log(error);
-        window.location.reload();
-        alert('Brewery info not available, try another search!');
-    })
-  };
 
   const refreshPage = () => {
     window.location.reload();
@@ -61,7 +41,7 @@ export default function Home() {
     console.log(e.target);
     const id = e.target.value;
     console.log(id);
-    const { data } = await addBrewery({variables: { id: id }});
+    const { data } = await addPost({variables: { id: id }});
     console.log(data);
     console.log(id);
   };
@@ -70,7 +50,7 @@ export default function Home() {
     console.log(e.target);
     const id = e.target.value;
     console.log(id);
-    const { data } = await removeBrewery({variables: { id: id }});
+    const { data } = await removePost({variables: { id: id }});
     console.log(data);
     console.log(id);
   };
@@ -98,7 +78,7 @@ export default function Home() {
                     placeholder="Select your city">
                   </input>
                     {/*onChange={(e) => setCity(e.target.value)}*/}
-            <div class="select">
+            <div className="select">
               <select id="dropdown">
                 <option id="selected">
                   <div className="selected">Select a City Near You</div>

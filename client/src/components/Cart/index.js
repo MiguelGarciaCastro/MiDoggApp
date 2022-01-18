@@ -6,7 +6,7 @@ import { TOGGLE_FAVORITES } from "../../utils/actions";
 import "./style.css";
 import { idbPromise } from "../../utils/helpers";
 import { QUERY_USER } from "../../utils/queries";
-import { UPDATE_BREWERIES } from "../../utils/actions";
+import { UPDATE_POST } from "../../utils/actions";
 import { useQuery } from "@apollo/client";
 
 import FavFont from '../../public/images/favoritesFont.png'
@@ -29,7 +29,7 @@ const Cart = ({removeHandler}) => {
     if (data) {
       // let's store it in the global state object
       dispatch({
-        type: UPDATE_BREWERIES,
+        type: UPDATE_POST,
         favorites: data.favorites,
       });
 
@@ -44,7 +44,7 @@ const Cart = ({removeHandler}) => {
       idbPromise("favorites", "get").then((favorites) => {
         // use retrieved array product data to set global state for offline browsing
         dispatch({
-          type: UPDATE_BREWERIES,
+          type: UPDATE_POST,
           favorites: favorites,
         });
       });

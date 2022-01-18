@@ -6,7 +6,9 @@ import {
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
+  from
 } from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
 import { setContext } from "@apollo/client/link/context";
 
 import Home from "./components/Home";
@@ -14,6 +16,7 @@ import aboutpage from "./pages/about";
 import { StoreProvider } from "./utils/GlobalState";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Cities from "./components/Cities";
 import Nav from "./components/Nav";
 import Login from "./components/Login";
 import "./App.css";
@@ -31,6 +34,7 @@ const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql",
 });
 
+
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
   return {
@@ -41,8 +45,25 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors)
+    graphQLErrors.forEach(({ message, locations, path }) =>
+      console.log(
+        `[GraphQL error]: Message: ${message}, Location: ${JSON.stringify(locations)}, Path: ${path}`,
+      ),
+    );
+
+  if (networkError) console.log(`[Network error]: ${networkError}`);
+});
+// console.log(authLink.concat(httpLink))
+// console.log(errorLink)
+// console.log(from([errorLink, authLink.concat(httpLink)]))
+// console.log(errorLink)
+// console.log(from([errorLink, authLink,httpLink]))
+
+
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link: from([errorLink, authLink,httpLink]),
   cache: new InMemoryCache(),
 });
 
@@ -57,6 +78,7 @@ function App() {
             <div>
               <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/cities" component={Cities} />
                 <Route exact path="/about" component={aboutpage} />
                 <Route exact path="/nav" component={Nav} />
                 <Route exact path="/login" component={Login} />

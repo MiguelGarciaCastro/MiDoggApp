@@ -35,21 +35,21 @@ export default function SignUp(props) {
   };
 
   return (
-    <section class="hero is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-              <div class="field bg-dark text-light p-3">
-                <form class="box" onSubmit={handleFormSubmit}>
+    <section className="hero is-fullheight">
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns is-centered">
+            <div className="column is-5-tablet is-4-desktop is-3-widescreen">
+              <div className="field bg-dark text-light p-3">
+                <form className="box" onSubmit={handleFormSubmit}>
                   <div className="field">
-                    <h3 class="text-center is-size-4 has-text-centered has-text-weight-bold">
+                    <h3 className="text-center is-size-4 has-text-centered has-text-weight-bold">
                     Join the pack!
                     </h3>
                     <label for="username-signup">Username:</label>
                     <br />
                     <input
-                      class="portfolio-languages text-dark input is-info"
+                      className="portfolio-languages text-dark input is-info"
                       type="text"
                       id="username-signup"
                       name="username"
@@ -60,7 +60,7 @@ export default function SignUp(props) {
                     <label for="password-signup">Password:</label>
                     <br />
                     <input
-                      class="portfolio-languages text-dark input is-info"
+                      className="portfolio-languages text-dark input is-info"
                       type="password"
                       id="password-signup"
                       name="password"
@@ -71,7 +71,7 @@ export default function SignUp(props) {
                     <label for="name-signup">Name:</label>
                     <br />
                     <input
-                      class="portfolio-languages text-dark input is-info"
+                      className="portfolio-languages text-dark input is-info"
                       type="name"
                       id="name-signup"
                       name="name"
@@ -79,9 +79,9 @@ export default function SignUp(props) {
                     />
                   </div> */}
                   <br />
-                  <div class="field">
-                    <p class="control">
-                      <button class="button is-primary" type="submit">
+                  <div className="field">
+                    <p className="control">
+                      <button className="button is-primary" type="submit">
                         Signup
                       </button>
                     </p>

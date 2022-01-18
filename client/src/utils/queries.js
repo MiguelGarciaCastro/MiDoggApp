@@ -56,9 +56,6 @@ export const QUERY_USER = gql`
         createdAt
         commentCount
       }
-      favorites {
-        id
-      }
       friendCount
       friends {
         _id
@@ -73,9 +70,8 @@ export const QUERY_ME = gql`
     me {
       _id
       username
-      favorites {
-        id
-      }
+     
+      
     }
   }
 `;

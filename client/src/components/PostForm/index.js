@@ -49,7 +49,7 @@ const PostForm = () => {
             await addPost({
                 variables: { body }
             });
-
+            // refreshPage()
             setText('');
             setCharacterCount(0);
         } catch (e) {
@@ -64,27 +64,27 @@ const PostForm = () => {
                 Character Count: {characterCount}/200
                 {error && <span> - Something went wrong...</span>}
             </p>
-            <section class="media">
-                <figure class="media-left">
-                    <p class="image-is-64x64">
+            <section className="media">
+                <figure className="media-left">
+                    <p className="image-is-64x64">
                         <img src="https://bulma.io/images/placeholders/128x128.png"></img>
                     </p>
                 </figure>
 
-                <form class="media-content" onSubmit={handleFormSubmit}>
-                    <div class="field">
-                        <p class="control">
+                <form className="media-content" onSubmit={handleFormSubmit}>
+                    <div className="field">
+                        <p className="control">
                             <textarea 
-                            class="textarea" 
+                            className="textarea" 
                             placeholder="Add a comment..." 
                             value={body} 
                             onChange={handleChange}></textarea>
                         </p>
                     </div>
-                    <div class="field">
-                        <p class="control">
+                    <div className="field">
+                        <p className="control">
                             <button 
-                            class="button" 
+                            className="button" 
                             type="submit" onClick={refreshPage}>Send Post</button>
                         </p>
                     </div>
