@@ -7,12 +7,12 @@ import { QUERY_POST } from '../../utils/queries';
 import Beericon from '../../public/images/circleBeericon.png';
 
 
-const CommentList = ({ comments }) => {
+const CommentList = ({ comments, postId }) => {
 
-    const { id: postId } = useParams();
+    const { id: postIdParam } = useParams();
     console.log(postId)
     const { loading, data } = useQuery(QUERY_POST, {
-        variables: { id: postId}
+        variables: { id: postId ? postId : postIdParam }
     });
 
     const post = data?.post || {};

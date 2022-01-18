@@ -42,12 +42,12 @@ const profiles = [
 export default function aboutpage() {
     return (
         <div>
-            <div class="hero-body">
-                <div class="container has-text-centered">
+            <div className="hero-body">
+                <div className="container has-text-centered">
                     
                     <div id="image-group">
-                        <div class="flex-parent flex-start">
-                            <div class="flex-justify flex-end">
+                        <div className="flex-parent flex-start">
+                            <div className="flex-justify flex-end">
                             <img src={group} alt="4 dogs" />
                             </div>
                             <br />

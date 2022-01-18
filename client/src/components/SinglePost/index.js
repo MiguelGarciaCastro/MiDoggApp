@@ -29,12 +29,12 @@ const SinglePost = props => {
         <div className="column">
             <br />
             <article className="media box has-background-link-light">
-                <figure class="media-left">
-                    <p class="image is-64x64">
+                <figure className="media-left">
+                    <p className="image is-64x64">
                         <img src={Bottle}></img>
                     </p>
                 </figure>
-                <div class="media-content">
+                <div className="media-content">
                     <div className="content">
                         <p>
                             <strong>@{posts.username}</strong>  

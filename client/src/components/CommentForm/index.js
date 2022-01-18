@@ -39,21 +39,21 @@ const CommentForm = ({ postId }) => {
                 Character Count: {characterCount}/150
                 {error && <span> - Something went wrong...</span>}
             </p>
-            <form class="media-content" onSubmit={handleFormSubmit}>
-                <div class="field">
-                    <p class="control">
+            <form className="media-content" onSubmit={handleFormSubmit}>
+                <div className="field">
+                    <p className="control">
                         <textarea
-                            class="textarea is-info is-small"
+                            className="textarea is-info is-small"
                             placeholder="Add a comment..."
                             value={commentBody}
                             onChange={handleChange}
                         ></textarea>
                     </p>
                 </div>
-                <div class="field">
-                    <p class="control">
+                <div className="field">
+                    <p className="control">
                         <button
-                            class="button"
+                            className="button"
                             type="submit" >Post Comment</button>
                     </p>
                 </div>

@@ -78,7 +78,7 @@ export default function Home() {
                     placeholder="Select your city">
                   </input>
                     {/*onChange={(e) => setCity(e.target.value)}*/}
-            <div class="select">
+            <div className="select">
               <select id="dropdown">
                 <option id="selected">
                   <div className="selected">Select a City Near You</div>

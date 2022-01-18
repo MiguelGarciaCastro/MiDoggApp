@@ -26,14 +26,14 @@ export default function Social() {
     }
 
     return (
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="column is-full is-centered">
+        <div className="hero-body">
+            <div className="container has-text-centered">
+                <div className="column is-full is-centered">
                     <img src={logo} alt="Logo" className="images image is-128x128 is-inline-block"></img>
-                    <h1 class="title text-light">
+                    <h1 className="title text-light">
                         MiDogApp
                     </h1>
-                    <h2 class="subtitle text-light">
+                    <h2 className="subtitle text-light">
         
                     </h2>
                     <hr />
@@ -41,7 +41,7 @@ export default function Social() {
                 
                 <br />
             </div>
-            <article class="column">
+            <article className="column">
                 {loading ? (
                     <div>Something is brewing!</div>
                 ) : (
@@ -57,7 +57,7 @@ export default function Social() {
                 )}
             </div>
             <br />
-            <div class="column is-full is-centered">
+            <div className="column is-full is-centered">
                 <img src={group}></img>
             </div>            
         </div>
