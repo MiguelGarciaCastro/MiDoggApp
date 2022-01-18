@@ -41,7 +41,7 @@ export default function Nav() {
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-                <Link className="navbar-item" to="/">BrewMap
+                <Link className="navbar-item" to="/">MiDogApp
                     <img alt="cheers" src={cheers} width="28" height="28"></img>
                 </Link>
 
