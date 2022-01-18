@@ -164,13 +164,13 @@ export default function Home() {
         </div>
       </div>
 
-      <script
+      {/* <script
         src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-        crossorigin="anonymous"
+        crossOrigin="anonymous"
       ></script>
       <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
-      <script src="/javascript/api.js"></script>
-    </>
+      <script src="/javascript/api.js"></script>*/}
+    </> 
   )
 }

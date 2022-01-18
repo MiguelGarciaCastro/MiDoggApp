@@ -11,7 +11,7 @@ import {
 import { onError } from "@apollo/client/link/error";
 import { setContext } from "@apollo/client/link/context";
 
-import Home from "./components/Home";
+import Home from "./pages/home";
 import aboutpage from "./pages/about";
 import { StoreProvider } from "./utils/GlobalState";
 import Header from "./components/Header";

@@ -36,13 +36,13 @@ const SinglePost = props => {
                 </figure>
                 <div className="media-content">
                     <div className="content">
-                        <p>
+                        <div>
                             <strong>@{posts.username}</strong>  
                             <br />
                             {posts.body}
                             <br />
                             <small><a>Like</a> . {posts.createdAt}</small>
-                        </p>
+                        </div>
                     </div>
                     <div className="content">
                         <CommentList comments={posts.comments} />

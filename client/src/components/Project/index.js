@@ -24,7 +24,7 @@ const Projects = ({ singleProject }) => {
         width: "20rem",
         margin: "20px 50px 20px 10px", backgroundColor: "#add8e6" 
       }}
-      key={singleProject.title} className="col-3"
+       className="col-3"
     >
     
       <Card.Title style={{ margin: "15px", fontSize: "27px", color: "#094067"}}>
@@ -42,7 +42,7 @@ const Projects = ({ singleProject }) => {
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></link>
 
         <div

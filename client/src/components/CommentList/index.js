@@ -33,14 +33,14 @@ const CommentList = ({ comments, postId }) => {
                         </figure>
                         <div className="media-content">
                             <div className="content">
-                                <p>
+                                <div>
                                     <strong>@{comment.username}</strong> 
                                     <br />
                                     {comment.commentBody}
                                     <Link to={`/profile/${comment.username}`}></Link>
                                     <br />
                                     <small><a>Like</a> . {comment.createdAt}</small>
-                                </p>
+                                </div>
                             </div>
                             
                         </div>

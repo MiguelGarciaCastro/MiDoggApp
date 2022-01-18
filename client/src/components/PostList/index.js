@@ -22,7 +22,7 @@ const PostList = ({ posts }) => {
                     </figure>
                     <div className="media-content">
                         <div className="content">
-                            <p>
+                            <div>
                                 <Link to={`/profile/${posts.username}`}>
                                 <strong>@{posts.username}</strong>
                                 </Link>
@@ -32,7 +32,7 @@ const PostList = ({ posts }) => {
                                 </Link>
                                 <br />
                                 <small>Like<Link to={`/post/${posts._id}`}>Reply</Link> {posts.createdAt}</small>
-                            </p>
+                            </div>
                         </div>
                         <CommentList postId={posts._id} comments={posts.comments}/>
                     </div>
