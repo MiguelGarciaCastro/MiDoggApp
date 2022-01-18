@@ -37,18 +37,18 @@ function Login(props) {
   };
 
   return (
-    <section class="hero is-fullheight">
-      <div class="hero-body">
-        <div class="container">
-          <div class="columns is-centered">
-            <div class="column is-5-tablet is-4-desktop is-3-widescreen">
-              <form action="" class="box" onSubmit={handleFormSubmit}>
-                <h1 class="text-center is-size-3 has-text-centered has-text-weight-bold">Sign In!</h1>
-                <div class="field">
-                  <label for="" class="label">
+    <section className="hero is-fullheight">
+      <div className="hero-body">
+        <div className="container">
+          <div className="columns is-centered">
+            <div className="column is-5-tablet is-4-desktop is-3-widescreen">
+              <form action="" className="box" onSubmit={handleFormSubmit}>
+                <h1 className="text-center is-size-3 has-text-centered has-text-weight-bold">Sign In!</h1>
+                <div className="field">
+                  <label for="" className="label">
                     Username
                   </label>
-                  <div class="control has-icons-left">
+                  <div className="control has-icons-left">
                     <input
                       type="username"
                       placeholder="e.g. johndoe"
@@ -58,38 +58,38 @@ function Login(props) {
                       onChange={handleChange}
                       required
                     ></input>
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-envelope"></i>
+                    <span className="icon is-small is-left">
+                      <i className="fa fa-envelope"></i>
                     </span>
                   </div>
                 </div>
-                <div class="field">
-                  <label for="" class="label">
+                <div className="field">
+                  <label for="" className="label">
                     Password
                   </label>
-                  <div class="control has-icons-left">
+                  <div className="control has-icons-left">
                     <input
                       type="password"
                       placeholder="*******"
-                      class="input"
+                      className="input"
                       name="password"
                       value={formState.password}
                       onChange={handleChange}
                       required
                     ></input>
-                    <span class="icon is-small is-left">
-                      <i class="fa fa-lock"></i>
+                    <span className="icon is-small is-left">
+                      <i className="fa fa-lock"></i>
                     </span>
                   </div>
                 </div>
-                <div class="field">
-                  <label for="" class="checkbox">
+                <div className="field">
+                  <label for="" className="checkbox">
                     <input type="checkbox"></input>
                     Remember me
                   </label>
                 </div>
-                <div class="field">
-                  <button class="button is-warning" type="submit">
+                <div className="field">
+                  <button className="button is-warning" type="submit">
                     Login
                   </button>
                 </div>
