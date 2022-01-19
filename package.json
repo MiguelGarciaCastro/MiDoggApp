@@ -4,16 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@apollo/client": "^3.3.20",
     "apollo-server-express": "^2.25.2",
     "axios": "^0.21.1",
     "bingmaps-react": "^1.1.0",
     "graphql": "^15.5.1",
-    "jwt-decode": "^3.1.2",
-    "react-bootstrap": "^2.1.1",
-    "react-icons": "^4.2.0",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "^5.0.0"
+    "jwt-decode": "^3.1.2"
+  
   },
   "devDependencies": {
     "concurrently": "^6.2.0"
