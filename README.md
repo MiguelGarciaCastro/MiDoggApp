@@ -25,7 +25,8 @@ With MiDogApp, Michiganders can login and share experiences or explore other dog
 ![image](https://user-images.githubusercontent.com/87254760/149864739-e49fbfc0-45cc-4fdd-9f7a-54a0be42d8fc.png)
 
 
-## Deployed on Heroku
+## Deployment on Heroku a Work In Progress
+[Heroku Deployment](https://midoggapp.herokuapp.com/)<br>
 
 
 ## Contributors <br>
