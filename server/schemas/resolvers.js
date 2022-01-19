@@ -1,4 +1,4 @@
-const { User, Post } = require("../models");
+const { User, Post, Brewery } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -72,25 +72,24 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // addPost: async (parent, args, context) => {
-    //   if (context.user) {
-    //     const post = await Post.create({
-    //       ...args,
-    //       username: context.user.username,
-    //     });
-    //     console.log(args)
+    addPost: async (parent, args, context) => {
+      if (context.user) {
+        const post = await Post.create({
+          ...args,
+          username: context.user.username,
+        });
 
-    //     await User.findByIdAndUpdate(
-    //       { _id: context.user._id },
-    //       { $push: { posts: post._id } },
-    //       { new: true }
-    //     );
+        await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $push: { posts: post._id } },
+          { new: true }
+        );
 
-    //     return post;
-    //   }
+        return post;
+      }
 
-    //   throw new AuthenticationError("You need to be logged in!");
-    // },
+      throw new AuthenticationError("You need to be logged in!");
+    },
     addComment: async (parent, { postId, commentBody }, context) => {
       if (context.user) {
         const updatedPost = await Post.findOneAndUpdate(
@@ -108,21 +107,20 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
-    addPost: async (parent, args, context) => {
+    addBrewery: async (parent, args, context) => {
       console.log("RESOLVER HIT");
         if (context.user) {
-            const post = await Post.create({
+            const brewery = await Brewery.create({
               ...args,
-              username: context.user.username
             });
-            console.log(post);
+            console.log(brewery);
             await User.findByIdAndUpdate(
               { _id: context.user._id },
-              { $push: { favorites: post } },
+              { $push: { favorites: brewery } },
               { new: true }
             );
     
-            return post;
+            return brewery;
           }
     
           throw new AuthenticationError("You need to be logged in!");
@@ -144,19 +142,19 @@ const resolvers = {
   
         throw new AuthenticationError("You need to be logged in!");
       },
-      removePost: async (parent, args, context) => {
+      removeBrewery: async (parent, args, context) => {
         if (context.user) {
-          const post = await Post.findOneAndDelete({
+          const brewery = await Brewery.findOneAndDelete({
             ...args,
           });
-          console.log(post)
+          console.log(brewery)
           await User.findByIdAndUpdate(
             {_id: context.user._id },
-            { $pull: { favorites: post } },
+            { $pull: { favorites: brewery } },
             { new: true}
           )
           
-          return post;
+          return brewery;
         }
 
         throw new AuthenticationError("You need to be logged in!");

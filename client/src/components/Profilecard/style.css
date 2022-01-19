@@ -21,7 +21,7 @@ body {
   
   font: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #cfcfcf;
-  background: linear-gradient(45deg, rgba(22, 167, 175, 0.6) 5%, rgba(23, 27, 158, 0.7) 55%, rgba(68, 9, 82, 0.5) 100%) no-repeat;
+  background: cyan;
   background-size: 200%;
   color: #222;
 }

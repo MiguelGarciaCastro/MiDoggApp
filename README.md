@@ -1,6 +1,6 @@
 # MiDogApp
 
-![image](https://user-images.githubusercontent.com/87254760/148344022-987edefa-1750-4aa6-a6eb-a959081de744.png)
+![image](https://user-images.githubusercontent.com/87254760/149864387-32872d3d-c545-45e4-af67-b089c59383e8.png)
 
 ## Description
 Sometimes, it's hard to figure out where you should take your dog for an outing. Which places and activities are dog-friendly? What do other dog handlers have to say about these dog-friendly places and activities near you?
@@ -16,9 +16,17 @@ With MiDogApp, Michiganders can login and share experiences or explore other dog
 * Queries and mutations for retrieving, adding, updating and deleting data
 * Includes authetication (JWT)
 
-## Screenshots (to add later)
+## Screenshots 
 
-## Deployment Link
+
+![image](https://user-images.githubusercontent.com/87254760/149864767-96bdda49-ce5e-458a-9cf0-f541662e3040.png)
+
+
+![image](https://user-images.githubusercontent.com/87254760/149864739-e49fbfc0-45cc-4fdd-9f7a-54a0be42d8fc.png)
+
+
+## Deployment on Heroku a Work In Progress
+[Heroku Deployment](https://midoggapp.herokuapp.com/)<br>
 
 
 ## Contributors <br>
