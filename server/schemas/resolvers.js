@@ -107,25 +107,7 @@ const resolvers = {
 
       throw new AuthenticationError("You need to be logged in!");
     },
-    addBrewery: async (parent, args, context) => {
-      console.log("RESOLVER HIT");
-        if (context.user) {
-            const brewery = await Brewery.create({
-              ...args,
-            });
-            console.log(brewery);
-            await User.findByIdAndUpdate(
-              { _id: context.user._id },
-              { $push: { favorites: brewery } },
-              { new: true }
-            );
     
-            return brewery;
-          }
-    
-          throw new AuthenticationError("You need to be logged in!");
-    },
-    // for future implementation
     addFriend: async (parent, { friendId }, context) => {
         if (context.user) {
           const updatedUser = await User.findOneAndUpdate(
@@ -142,23 +124,7 @@ const resolvers = {
   
         throw new AuthenticationError("You need to be logged in!");
       },
-      removeBrewery: async (parent, args, context) => {
-        if (context.user) {
-          const brewery = await Brewery.findOneAndDelete({
-            ...args,
-          });
-          console.log(brewery)
-          await User.findByIdAndUpdate(
-            {_id: context.user._id },
-            { $pull: { favorites: brewery } },
-            { new: true}
-          )
-          
-          return brewery;
-        }
-
-        throw new AuthenticationError("You need to be logged in!");
-      }
+      
   },
 };
 
