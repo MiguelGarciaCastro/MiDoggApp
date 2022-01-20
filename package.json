@@ -9,7 +9,6 @@
     "bingmaps-react": "^1.1.0",
     "graphql": "^15.5.1",
     "jwt-decode": "^3.1.2"
-  
   },
   "devDependencies": {
     "concurrently": "^6.2.0"
